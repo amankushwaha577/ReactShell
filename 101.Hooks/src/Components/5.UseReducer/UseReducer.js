@@ -7,7 +7,7 @@ function UseReducer() {
   function reducer(state, action) {
     switch (action.type) {
       case 'increment':
-        return { count: state.count + 1 };
+        return { count: state.count + action.payload };
       case 'decrement':
         return { count: state.count - 1 };
       default:
@@ -20,9 +20,10 @@ function UseReducer() {
 
   return (
     <div>
+      UseReducer -
       <p>Count: {state.count}</p>
-      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+      <button onClick={() => dispatch({ type: 'increment', payload : 5 })}>Increment By 5</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement By 1</button>
     </div>
   );
 }
@@ -44,11 +45,12 @@ export default UseReducer
 // 2. initialState: The initial state value for the reducer.
 // 3. state: The current state value.
 // 4. dispatch: A function used to send actions to the reducer.
+//              dispatch(action) | dispatch({type : _______ , payload : _______ })
 
 
-// Reducer Function -
-// -------------------------------------
+// Reducer(state, action) Function -
+// ----------------------------------
 // The reducer function is where you define how state should change in response to different actions. It takes two arguments:
 // 1. state: The current state.
-// 2. action: An object {type : xyz , payload : xyz } that typically contains a type field and other necessary data for the state update.
+// 2. action: An object {type : _______ , payload : _______ } that typically contains a type field and other necessary data for the state update.
 
