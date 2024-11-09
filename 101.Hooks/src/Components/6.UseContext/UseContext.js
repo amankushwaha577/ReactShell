@@ -3,14 +3,14 @@ import React, { createContext, useContext, useState } from 'react';
 // 1. Create a context with a default value
 const ThemeContext = createContext('light');
 
-function App() {
+function UseContext() {
   const [theme, setTheme] = useState('light');
 
   // 2. Use the Provider to wrap the component tree and pass down the context value
   return (
     <ThemeContext.Provider value={theme}>
       <div>
-        <h1>App Component</h1>
+        UseContext<br/>
         <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
           Toggle Theme
         </button>
@@ -19,6 +19,7 @@ function App() {
     </ThemeContext.Provider>
   );
 }
+export default UseContext;
 
 // 3. Consume the context in a child component using `useContext`
 function Content() {
@@ -26,7 +27,7 @@ function Content() {
   return <div>The current theme is {theme}</div>;
 }
 
-export default App;
+
 
 
 
