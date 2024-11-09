@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const UserContext = createContext();
 const ThemeContext = createContext();
 
-function App() {
+function Multiple() {
   const [theme, setTheme] = useState('light');
   const user = { name: 'Alice' };
 
@@ -15,6 +15,8 @@ function App() {
     </UserContext.Provider>
   );
 }
+
+export default Multiple;
 
 function Content() {
   const theme = useContext(ThemeContext);
