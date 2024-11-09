@@ -16,6 +16,7 @@ const UseMemo = () => {
             <hr/> UseMemo -
             <p>Number: {number}</p>
             <p>Squared: {squaredNumber}</p>
+            <hr/>
         </div>
     );
 }
