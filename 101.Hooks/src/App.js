@@ -4,6 +4,7 @@ import UseMemo from './Components/3.UseMemo/UseMemo';
 import UseCallback from './Components/4.UseCallback/UseCallback';
 import UseReducer from './Components/5.UseReducer/UseReducer';
 import UseContext from './Components/6.UseContext/UseContext';
+import DomAccess from './Components/7.UseRef/DomAccess';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
 
       <UseReducer/> <hr/> {/* State Management : Change State Frequently By action */}
       <UseContext /> <hr/> {/* State Management :  Avoid PropDrilling */}
+
+      <DomAccess/>
       
 
       
