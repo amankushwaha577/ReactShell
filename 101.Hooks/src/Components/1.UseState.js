@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const UseState = () => {
   const [x, setX] = useState("UseState");
 
-  let temp = useState("Printing Complete UseState");
+  let temp = useState("Returns array : [state, Function to change State]");
   console.log(temp);
   // OP: ['Printing Complete UseState', ƒ]
 
