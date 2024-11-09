@@ -13,10 +13,9 @@ const UseMemo = () => {
 
     return (
         <div>
-            <hr/> UseMemo -
+             UseMemo -
             <p>Number: {number}</p>
             <p>Squared: {squaredNumber}</p>
-            <hr/>
         </div>
     );
 }

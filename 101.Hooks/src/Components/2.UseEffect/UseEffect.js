@@ -25,7 +25,7 @@ const UseEffect = () => {
     }, []);
 
     return <>
-        <hr /><div>UseEffect</div></>;
+        <div>UseEffect</div></>;
 };
 
 export default UseEffect;
