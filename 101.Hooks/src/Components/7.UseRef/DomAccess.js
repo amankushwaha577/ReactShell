@@ -17,7 +17,9 @@ function DomAccess() {
 
 export default DomAccess;
 
-
+// 1. initialValue: The initial value assigned to the reference. For DOM elements, this is typically null.
+// 2. useRef returns an object with a single property, .current, which holds the value. You can set or get ref.current directly.
+//    Changes to .current don’t trigger a re-render, making it useful for cases where the value should persist but not affect the UI directly.
 
 // Summary of useRef :
 // 1. Accessing DOM: Can directly reference and manipulate DOM elements, e.g., for focusing, scrolling, or adding event listeners.

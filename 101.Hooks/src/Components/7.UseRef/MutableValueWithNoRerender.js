@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-function Counter() {
+function MutableValueWithNoRerender() {
   const countRef = useRef(0); // Initial value is 0
   const [_, setRerender] = useState(false); // Just for triggering re-render to show updates
 
@@ -17,4 +17,9 @@ function Counter() {
   );
 }
 
-export default Counter;
+export default MutableValueWithNoRerender;
+
+
+// 2. Storing Mutable Data: Holds values that change over time, without causing re-renders, useful for things like timers or counters.
+
+// No Re-Render: Changes to ref.current don’t cause re-renders, unlike useState.

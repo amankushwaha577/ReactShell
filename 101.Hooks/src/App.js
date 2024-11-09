@@ -3,8 +3,12 @@ import UseEffect from './Components/2.UseEffect/UseEffect';
 import UseMemo from './Components/3.UseMemo/UseMemo';
 import UseCallback from './Components/4.UseCallback/UseCallback';
 import UseReducer from './Components/5.UseReducer/UseReducer';
+import DeaultValue from './Components/6.UseContext/Defaultvalue';
+import MultipleContextAPI from './Components/6.UseContext/MultipleContextAPI';
 import UseContext from './Components/6.UseContext/UseContext';
 import DomAccess from './Components/7.UseRef/DomAccess';
+import MutableValueWithNoRerender from './Components/7.UseRef/MutableValueWithNoRerender';
+import MutableValue from './Components/7.UseRef/MutableValueWithNoRerender';
 
 function App() {
   return (
@@ -16,10 +20,14 @@ function App() {
       <UseMemo/> <hr/> {/* Value Memoization */}
       <UseCallback/> <hr/> {/* Function Memoization */}
 
-      <UseReducer/> <hr/> {/* State Management : Change State Frequently By action */}
-      <UseContext /> <hr/> {/* State Management :  Avoid PropDrilling */}
+      <UseReducer/> <hr/> {/* State Management : State Change Frequently By action */}
 
-      <DomAccess/>
+      <UseContext />  {/* State Management :  Avoid PropDrilling */}
+      <MultipleContextAPI/> 
+      <DeaultValue/> <hr/>
+
+      <DomAccess/>  {/*  directly referencing and manipulate DOM elements */}
+      <MutableValueWithNoRerender/> <hr/> {/* Change Value without causing re-render */}
       
 
       

@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const UserContext = createContext();
 const ThemeContext = createContext();
 
-function Multiple() {
+function MultipleContextAPI() {
   const [theme, setTheme] = useState('light');
   const user = { name: 'Alice' };
 
@@ -16,7 +16,7 @@ function Multiple() {
   );
 }
 
-export default Multiple;
+export default MultipleContextAPI;
 
 function Content() {
   const theme = useContext(ThemeContext);
