@@ -20,7 +20,7 @@ function App() {
       <UseMemo/> <hr/> {/* Value Memoization */}
       <UseCallback/> <hr/> {/* Function Memoization */}
 
-      <UseReducer/> <hr/> {/* State Management : State Change Frequently By action */}
+      <UseReducer/> <hr/> {/* State Management : Instead Of changing state again & again Change State Frequently By action */}
 
       <UseContext />  {/* State Management :  Avoid PropDrilling */}
       <MultipleContextAPI/> 

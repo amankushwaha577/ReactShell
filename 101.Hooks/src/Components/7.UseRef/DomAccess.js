@@ -8,7 +8,7 @@ function DomAccess() {
   }
 
   return (
-    <div>
+    <div> UseRef -<br/>
       <input ref={inputRef} type="text" placeholder="Type something..." />
       <button onClick={handleClick}>Focus Input</button>
     </div>
