@@ -1,14 +1,14 @@
 import React, { createContext, useContext, useState } from 'react';
 
 // 1. Create a context with a default value
-const ThemeContext = createContext('light');
+const ThemeContext = createContext('light');  // ThemeContext is Object
 
 function UseContext() {
   const [theme, setTheme] = useState('light');
 
   // 2. Use the Provider to wrap the component tree and pass down the context value
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={theme}>   {/* Provider is a Wrapper Component Provided By CreateContext API */}
       <div>
         UseContext<br/>
         <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
