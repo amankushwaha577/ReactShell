@@ -31,8 +31,8 @@ function App() {
       <DomAccess/>  {/*  directly referencing and manipulate DOM elements */}
       <MutableValueWithNoRerender/> <hr/> {/* Change Value without causing re-render */}
 
-      <ForwardRef/> 
-      <UseImperativeHandle/>
+      <ForwardRef/> { /* To Access DOM element of Child,  parent sends a ref and Child take it using forwardRef(props, ref) */}
+      <UseImperativeHandle/>  {/* Child uses useImperativeHandle to restrict parent to completely access DOM */}
       
 
       
