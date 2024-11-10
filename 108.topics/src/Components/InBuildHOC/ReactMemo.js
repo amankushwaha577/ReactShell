@@ -35,3 +35,5 @@ const MyComponent = ({ value }) => {
   
   export default ReactMemo;
   
+
+  // React memo HOC component render its component only when its parent changes
