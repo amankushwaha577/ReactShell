@@ -119,10 +119,12 @@ export default App;
 //          </NavLink>
 // 
 // A. The style prop is used to apply inline CSS styles dynamically.
-// B. style prop takes a function that receives an object as an argument. This object contains information about the link’s state.
-// C. isActive: This is a boolean value that tells us whether the current route matches the route specified in the to prop (i.e., whether the link is active or not).
-// D. If the link is active (the current URL is /about), isActive will be true.
-// E. If the link is not active, isActive will be false.
+// B. style prop takes a function that receives an object as an argument. This object contains information about the link’s state .
+//    i). isActive: This is a boolean value that tells us whether the current route matches the route specified in the to prop (i.e., whether the link is active or not).
+//    ii).The function then returns a style object, where the color property is dynamically set:
+
+// C. If the link is active (the current URL is /about), isActive will be true.
+// D. If the link is not active, isActive will be false.
 
 // useNavigate	: Programmatically navigates to a route from within a component.
 // useParams: 	Retrieves dynamic URL parameters (e.g., :id).
