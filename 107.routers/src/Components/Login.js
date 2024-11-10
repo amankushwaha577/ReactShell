@@ -5,8 +5,7 @@ const Login = () => {
     const navigate = useNavigate();
   
     const handleLogin = () => {
-      // Simulate login action and navigate to Dashboard
-      navigate('/dashboard');
+      navigate('/dashboard');  // Navigate to another route
     };
   
     return (
@@ -18,3 +17,7 @@ const Login = () => {
   };
 
   export default Login
+
+// useNavigate ---
+// The useNavigate hook allows you to programmatically navigate to different routes from ***within your components***. 
+// It replaces the useHistory hook from React Router v5.

@@ -6,16 +6,15 @@ import About from './Components/About';
 import Login from './Components/Login';
 import UserProfile from './Components/UserProfile';
 
-
-// Dashboard with nested routes
-const Dashboard = () => {
+// Setting with nested routes
+const Settings = () => {
   return (
     <div>
-      <h2>Dashboard</h2>
+      <h2>Setting</h2>
       <nav>
         <ul>
-          <li><NavLink to="stats" activeClassName="active">Stats</NavLink></li>
-          <li><NavLink to="settings" activeClassName="active">Settings</NavLink></li>
+          <li><NavLink to="Setting1"  style={({ isActive }) => ({ color: isActive ? 'yellow' : 'blue' })}>Setting 1</NavLink></li>
+          <li><NavLink to="Setting2" >Setting 2</NavLink></li>
         </ul>
       </nav>
       <Outlet /> {/* Nested routes will render here */}
@@ -23,14 +22,14 @@ const Dashboard = () => {
   );
 };
 
-// Stats Page (nested route under Dashboard)
-const Stats = () => {
-  return <h3>Stats Page</h3>;
+// Setting1 Page (nested route under Setting)
+const Setting1 = () => {
+  return <h3>Settings Page 1</h3>;
 };
 
-// Settings Page (nested route under Dashboard)
-const Settings = () => {
-  return <h3>Settings Page</h3>;
+// Settings2 Page (nested route under Setting)
+const Setting2 = () => {
+  return <h3>Settings Page 2</h3>;
 };
 
 
@@ -46,7 +45,7 @@ function App() {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/user/123">User Profile (ID 123)</Link></li>
-            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/Settings">Settings</Link></li>
           </ul>
         </nav>
 
@@ -60,9 +59,9 @@ function App() {
 
 
           {/* Dashboard with Nested Routes */}
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="stats" element={<Stats />} />
-            <Route path="settings" element={<Settings />} />
+          <Route path="/Settings" element={<Settings />}>
+            <Route path="Setting1" element={<Setting1 />} />
+            <Route path="Setting2" element={<Setting2 />} />
           </Route>
 
           {/* Catch-all route */}
@@ -74,3 +73,59 @@ function App() {
 }
 
 export default App;
+
+
+// 1. BrowserRouter (Router):
+// This is the top-level component that provides the routing context to the rest of the application. 
+// It uses the HTML5 history API to keep your app in sync with the URL.
+// _____________________________________________________________________________________
+//          <Router>
+                     {/* Your routes go here */}
+//          </Router>
+
+
+
+// 2. Routes:
+// A container for all the Route components, which automatically renders the first matching route.
+// It Groups routes and renders the first matching route.
+// _____________________________________________________________________________________
+//           <Routes>
+//                <Route path="/" element={<Home />} />
+                  {/* More routes */}
+//           </Routes>
+
+
+
+// 3. Route:
+// Defines a path and the component to render when the URL matches that path. 
+// In React Router v6, the element prop is used to pass the JSX component to render.
+// _____________________________________________________________________________________
+//           <Route path="/about" element={<About />} />
+
+
+// 4. Link :
+// The Link component is used to create links that navigate to different routes . 
+// It replaces the traditional <a> tag to prevent page reloads. (interview)
+// _____________________________________________________________________________________
+//            <Link to="/about">Go to About Page</Link>
+
+
+// 5. Link vs NavLink
+// While Link is used for basic routing, NavLink provides additional styling for 
+// the active link (e.g., highlighting the current active route).
+// _____________________________________________________________________________________
+//         <NavLink to="/about" style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}>
+//            About
+//          </NavLink>
+// 
+// A. The style prop is used to apply inline CSS styles dynamically.
+// B. style prop takes a function that receives an object as an argument. This object contains information about the link’s state.
+// C. isActive: This is a boolean value that tells us whether the current route matches the route specified in the to prop (i.e., whether the link is active or not).
+// D. If the link is active (the current URL is /about), isActive will be true.
+// E. If the link is not active, isActive will be false.
+
+// useNavigate	: Programmatically navigates to a route from within a component.
+// useParams: 	Retrieves dynamic URL parameters (e.g., :id).
+// useLocation:	Provides information about the current URL and location.
+// Outlet:	Renders nested routes inside parent components.
+
