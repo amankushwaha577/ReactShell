@@ -13,3 +13,9 @@ function Example() {
     </div>
   );
 }
+
+
+// Constructor is synchronous 
+// usestate is asynchronous
+
+// both are pure

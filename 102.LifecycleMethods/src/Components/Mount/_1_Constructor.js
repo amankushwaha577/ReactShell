@@ -7,7 +7,8 @@ class Example extends React.Component {
         count: 0
       };
       
-      // Accessing the state immediately after
+      // Accessing the state immediately after 
+      // because state initialization is sychronous but state change is asychronous.
       console.log(this.state.count); // Outputs: 0
     }
   
@@ -20,3 +21,5 @@ class Example extends React.Component {
     }
   }
   
+
+  // Constructor is used to assign state.
