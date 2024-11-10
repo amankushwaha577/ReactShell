@@ -5,17 +5,21 @@ import ChildToParent from './Components/ChildToParent';
 import ReactMemo from './Components/InBuildHOC/ReactMemo';
 import ClassComponent from './Components/ClassComponent/ClassComponent';
 import ConditionalRendering from './Components/ConditionalRendering';
+import GET from './Components/APIs/GET';
 
 function App() {
   return (
     <div className="App">
       <ConditionalRendering /><hr />
+
       <ChildToParent /> <hr />
       {/* <LazyLoading/><hr /> */}
       
-      <ReactMemo />
+      <ReactMemo /><hr />
 
-      <ClassComponent />
+      <ClassComponent /><hr />
+
+      <GET/>
     </div>
   );
 }
