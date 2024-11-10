@@ -11,6 +11,7 @@ import MutableValueWithNoRerender from './Components/7.UseRef/MutableValueWithNo
 import MutableValue from './Components/7.UseRef/MutableValueWithNoRerender';
 import ForwardRef from './Components/8.UseImperativehandle/ForwardRef';
 import UseImperativeHandle from './Components/8.UseImperativehandle/UseImperativeHandle';
+import UseLayoutEffect from './Components/9.UseLayoutEffect/UseLayoutEffect';
 
 function App() {
   return (
@@ -32,7 +33,9 @@ function App() {
       <MutableValueWithNoRerender/> <hr/> {/* Change Value without causing re-render */}
 
       <ForwardRef/> { /* To Access DOM element of Child,  parent sends a ref and Child take it using forwardRef(props, ref) */}
-      <UseImperativeHandle/>  {/* Child uses useImperativeHandle to restrict parent to completely access DOM */}
+      <UseImperativeHandle/> <hr/>{/* Child uses useImperativeHandle to restrict parent to completely access DOM */}
+
+      <UseLayoutEffect/>
       
 
       
