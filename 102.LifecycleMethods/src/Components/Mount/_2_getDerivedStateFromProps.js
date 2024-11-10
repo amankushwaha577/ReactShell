@@ -14,7 +14,7 @@ class _2_getDerivedStateFromProps extends React.Component {
           value: nextProps.value
         };
       }
-      // No state update necessary
+      // if No state update necessary
       return null;
     }
   
@@ -24,4 +24,6 @@ class _2_getDerivedStateFromProps extends React.Component {
   }
 
   export default _2_getDerivedStateFromProps;
-  
+
+
+  // getDerivedStateFromProps is synchronous and pure
