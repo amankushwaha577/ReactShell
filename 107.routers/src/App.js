@@ -126,6 +126,11 @@ export default App;
 // C. If the link is active (the current URL is /about), isActive will be true.
 // D. If the link is not active, isActive will be false.
 
+
+
+
+
+
 // useNavigate	: Programmatically navigates to a route from within a component.
 // useParams: 	Retrieves dynamic URL parameters (e.g., :id).
 // useLocation:	Provides information about the current URL and location.

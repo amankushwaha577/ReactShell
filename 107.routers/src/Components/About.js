@@ -3,6 +3,10 @@ import { useLocation } from "react-router-dom";
 // About Page Component
 const About = () => {
     const location = useLocation();
+
+    console.log("location :",location);
+    // Op: {pathname: '/about', search: '', hash: '', state: null, key: '07iu5usv'}
+    
     return <h1>About Current path: {location.pathname}</h1>;
  
   };
