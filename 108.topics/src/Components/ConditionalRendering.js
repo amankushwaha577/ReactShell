@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ConditionalRenderingExample() {
+function ConditionalRendering() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [hasPermission, setHasPermission] = useState(true);
 
@@ -38,7 +38,7 @@ function ConditionalRenderingExample() {
     );
 }
 
-export default ConditionalRenderingExample;
+export default ConditionalRendering;
 
 // Conditional rendering in React allows you to display different content or components based on certain conditions.
 
