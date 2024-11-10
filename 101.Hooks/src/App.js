@@ -9,6 +9,8 @@ import UseContext from './Components/6.UseContext/UseContext';
 import DomAccess from './Components/7.UseRef/DomAccess';
 import MutableValueWithNoRerender from './Components/7.UseRef/MutableValueWithNoRerender';
 import MutableValue from './Components/7.UseRef/MutableValueWithNoRerender';
+import ForwardRef from './Components/8.UseImperativehandle/ForwardRef';
+import UseImperativeHandle from './Components/8.UseImperativehandle/UseImperativeHandle';
 
 function App() {
   return (
@@ -28,6 +30,9 @@ function App() {
 
       <DomAccess/>  {/*  directly referencing and manipulate DOM elements */}
       <MutableValueWithNoRerender/> <hr/> {/* Change Value without causing re-render */}
+
+      <ForwardRef/> 
+      <UseImperativeHandle/>
       
 
       
