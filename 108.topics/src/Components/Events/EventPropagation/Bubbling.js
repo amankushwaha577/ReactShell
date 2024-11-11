@@ -1,23 +1,32 @@
 function App() {
-    // Event handler for parent div click
+    // Event handler for parent div click (during bubbling phase)
     const handleParentClick = () => {
         console.log("Parent clicked"); // Logs when the parent div is clicked
     };
 
-    // Event handler for button click
+    // Event handler for button click (during bubbling phase)
     const handleClick = () => {
         console.log("Button clicked"); // Logs when the button is clicked
     };
 
     return (
-        // Parent div with an onClickCapture event handler for capturing phase
-        <div onClickCapture={handleParentClick}>
+        // Parent div with an onClick event handler for bubbling phase
+        <div onClick={handleParentClick}>
             {/* Button element with an onClick event handler for bubbling phase */}
             <button onClick={handleClick}>Click me</button>
         </div>
     );
 }
 
+// Expected Behavior:
+// 1. When clicking the button:
+// -----------------------------------------
+// The handleClick function logs "Button clicked".
+// After the button’s event handler completes, the event bubbles up to the parent div, triggering handleParentClick and logging "Parent clicked".
+
+// When clicking outside the button but within the parent div:
+// ------------------------------------------
+// Only handleParentClick is triggered, logging "Parent clicked".
 
 // Event propagation refers to the order in which events are handled in the DOM when an event is triggered on an element. 
 // There are two main phases of event propagation: capturing and bubbling.
@@ -36,6 +45,3 @@ function App() {
 // ┃ Example                       ┃ <div><button onClick={handleClick}>Click me</button></div>                   ┃ <div onClickCapture={handleCapture}><button>Click me</button></div>           ┃
 // └━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┴━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┴━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘
 
-
-// In the above example, when you click the button, the "handleClick" for the button will execute first, 
-// and then the handleParentClick for the div will execute due to event bubbling.

@@ -1,27 +1,30 @@
 function App() {
-    // Event handler for button click
-    const handleClick = () => {
-      console.log('Button clicked'); // Logs when the button is clicked
-    };
-  
-    // Event handler for parent div click
-    const handleParentClick = () => {
-      console.log('Parent clicked'); // Logs when the parent div is clicked
-    };
-  
-    return (
+  // Event handler for parent div click (during capturing phase)
+  const handleParentClick = () => {
+      console.log("Parent clicked during capturing"); // Logs when the parent div captures the event
+  };
+
+  // Event handler for button click (during capturing phase)
+  const handleClick = () => {
+      console.log("Button clicked during capturing"); // Logs when the button captures the event
+  };
+
+  return (
       // Parent div with an onClickCapture event handler for capturing phase
       <div onClickCapture={handleParentClick}>
-        {/* Button element with an onClick event handler for bubbling phase */}
-        <button onClick={handleClick}>
-          Click me
-        </button>
+          {/* Button element with an onClickCapture event handler for capturing phase */}
+          <button onClickCapture={handleClick}>Click me</button>
       </div>
-    );
-  }
+  );
+}
 
+// Expected Behavior:
 
-// So, when you click the button:
+// When clicking the button:
+// --------------------------
+// First, handleParentClick on the parent div is triggered in the capturing phase, logging "Parent clicked during capturing".
+// Then, handleClick on the button is triggered in the capturing phase, logging "Button clicked during capturing".
 
-// The event is first captured by the div because of the onClickCapture handler, and handleParentClick is executed.
-// Then, after the event is passed through the capturing phase, the event reaches the button, and the handleClick is executed due to event bubbling.
+// When clicking outside the button but within the parent div:
+// ---------------------------
+// Only handleParentClick on the parent div is triggered in the capturing phase, logging "Parent clicked during capturing".
