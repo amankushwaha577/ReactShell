@@ -28,3 +28,8 @@ function App() {
 // 2. When clicking outside the button but within the parent div:
 // ---------------------------
 // Only handleParentClick on the parent div is triggered in the capturing phase, logging "Parent clicked during capturing".
+
+
+
+
+// Note : when you put onClickCapture on root than thing work as capturing
