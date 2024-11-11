@@ -24,9 +24,12 @@ function App() {
 // The handleClick function logs "Button clicked".
 // After the button’s event handler completes, the event bubbles up to the parent div, triggering handleParentClick and logging "Parent clicked".
 
-// When clicking outside the button but within the parent div:
+// 2. When clicking outside the button but within the parent div:
 // ------------------------------------------
 // Only handleParentClick is triggered, logging "Parent clicked".
+
+
+
 
 // Event propagation refers to the order in which events are handled in the DOM when an event is triggered on an element. 
 // There are two main phases of event propagation: capturing and bubbling.

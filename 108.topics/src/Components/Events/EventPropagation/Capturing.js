@@ -20,11 +20,11 @@ function App() {
 
 // Expected Behavior:
 
-// When clicking the button:
+// 1. When clicking the button:
 // --------------------------
 // First, handleParentClick on the parent div is triggered in the capturing phase, logging "Parent clicked during capturing".
 // Then, handleClick on the button is triggered in the capturing phase, logging "Button clicked during capturing".
 
-// When clicking outside the button but within the parent div:
+// 2. When clicking outside the button but within the parent div:
 // ---------------------------
 // Only handleParentClick on the parent div is triggered in the capturing phase, logging "Parent clicked during capturing".
