@@ -1,7 +1,7 @@
 export default function Capturing() {
     // Event handler for the Parent component's click event during the capturing phase
     function handleParentClick(event) {
-      event.stopPropagation();
+      event.stopPropagation();    //It's preventing capturing to child but chatgpt saying it does't work for capturing
       console.log("Parent clicked during capturing");
     }
   
