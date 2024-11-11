@@ -23,3 +23,5 @@ export default EventDelegation;
 // 2. When events are triggered on child elements, they "bubble up"(Bubbling) through the DOM tree to this common ancestor, 
 //    which can handle them centrally. 
 // 3. This is efficient because it minimizes the number of event listeners, reducing memory usage and improving performance.
+
+
