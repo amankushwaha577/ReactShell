@@ -1,4 +1,4 @@
-function Parent() {
+export default function Bubbling() {
 
     function handleParentClick() {
       console.log("Parent clicked");  // Logs only when the parent div is clicked not when child is clicked

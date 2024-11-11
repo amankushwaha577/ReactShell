@@ -1,4 +1,4 @@
-function App() {
+export default function Bubbling() {
     // Event handler for parent div click (during bubbling phase)
     const handleParentClick = () => {
         console.log("Parent clicked"); // Logs when the parent div is clicked

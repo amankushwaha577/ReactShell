@@ -1,4 +1,4 @@
-function App() {
+export default function Capturing() {
   // Event handler for parent div click (during capturing phase)
   const handleParentClick = () => {
       console.log("Parent clicked during capturing"); // Logs when the parent div captures the event

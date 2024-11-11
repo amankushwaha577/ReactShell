@@ -6,6 +6,7 @@ import ReactMemo from './Components/InBuildHOC/ReactMemo';
 import ClassComponent from './Components/ClassComponent/ClassComponent';
 import ConditionalRendering from './Components/ConditionalRendering';
 import GET from './Components/APIs/GET';
+import Capturing from './Components/Events/EventPrevention/StopPropagation/Capturing';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <ClassComponent /><hr />
 
       <GET/>
+
+      <Capturing/>
     </div>
   );
 }
