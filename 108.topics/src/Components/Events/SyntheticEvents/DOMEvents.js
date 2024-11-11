@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function App() {
+function DOMEvents() {
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default DOMEvents;
