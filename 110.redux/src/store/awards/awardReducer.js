@@ -10,7 +10,7 @@ const awardReducer = (state = initialState, action) => {
     case ACTION1:
       return {
         ...state,
-        data1: "Data 1 Changed",
+        data1: action.payload,
       };
     case ACTION1:
       return {
