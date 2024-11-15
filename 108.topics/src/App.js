@@ -28,8 +28,10 @@ function App() {
       {/* 5. Just see structure and super constructor */}
       <ClassComponent /><hr />
 
+      {/* 6. API Implementation */}
       <GET /> <hr />
 
+      {/* 7.Event Propagation*/}
       <Capturing />
       <Bubbling />
       <BothBubblingTrickling />
