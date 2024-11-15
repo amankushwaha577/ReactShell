@@ -21,15 +21,17 @@ function App() {
 
       {/* 3. Perfomance optimazation : by loading light component first and heavy after some suspense */}
       {/* <LazyLoading/><hr /> */}
-      
+
+      {/* 4. It renders component only when its props/state changes */}
       <ReactMemo /><hr />
 
+      {/* 5. Just see structure and super constructor */}
       <ClassComponent /><hr />
 
-      <GET/> <hr />
+      <GET /> <hr />
 
-      <Capturing/>
-      <Bubbling/>
+      <Capturing />
+      <Bubbling />
       <BothBubblingTrickling />
     </div>
   );

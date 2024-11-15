@@ -37,3 +37,7 @@ const MyComponent = ({ value }) => {
   
 
   // React memo HOC component render its component only when its parent changes
+
+  // React.memo is a higher-order component (HOC) that allows functional components to avoid unnecessary re-renders by memoizing them.
+  // It’s similar to PureComponent for class components, which only re-renders when its props or state change.
+
