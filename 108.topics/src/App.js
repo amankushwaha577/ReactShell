@@ -7,6 +7,7 @@ import ClassComponent from './Components/ClassComponent/ClassComponent';
 import ConditionalRendering from './Components/ConditionalRendering';
 import GET from './Components/APIs/GET';
 import Capturing from './Components/Events/EventPrevention/StopPropagation/Capturing';
+import BothBubblingTrickling from './Components/Events/EventPropagation/BothBubblingTrickling';
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
 
       <ClassComponent /><hr />
 
-      <GET/>
+      <GET/> <hr />
 
       <Capturing/>
+      <BothBubblingTrickling />
     </div>
   );
 }
