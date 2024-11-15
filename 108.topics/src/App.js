@@ -8,13 +8,18 @@ import ConditionalRendering from './Components/ConditionalRendering';
 import GET from './Components/APIs/GET';
 import Capturing from './Components/Events/EventPrevention/StopPropagation/Capturing';
 import BothBubblingTrickling from './Components/Events/EventPropagation/BothBubblingTrickling';
+import Bubbling from './Components/Events/EventPropagation/Bubbling';
 
 function App() {
   return (
     <div className="App">
+      {/* 1. ConditionalRendering : Render Element on the basis of Condition */}
       <ConditionalRendering /><hr />
 
+      {/* 2. Sending data from child to parent through callback function */}
       <ChildToParent /> <hr />
+
+      {/* 3. Perfomance optimazation : by loading light component first and heavy after some suspense */}
       {/* <LazyLoading/><hr /> */}
       
       <ReactMemo /><hr />
@@ -24,6 +29,7 @@ function App() {
       <GET/> <hr />
 
       <Capturing/>
+      <Bubbling/>
       <BothBubblingTrickling />
     </div>
   );

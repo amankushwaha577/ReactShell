@@ -32,6 +32,9 @@ export default LazyLoading
 // Note : Network => slow 3G
 
 
+// Lazy loading is a performance optimization technique where components or resources are loaded only when they are needed,
+//  rather than all at once during the initial render. This reduces the initial load time of an application.
+
 
 // Key Points:
 // 1. React.lazy() is used for importing a component dynamically.
