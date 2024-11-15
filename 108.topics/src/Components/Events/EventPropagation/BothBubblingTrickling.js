@@ -50,3 +50,14 @@ export default BothBubblingTrickling;
 // Bubbling happens afterward (child to parent).
 // The button itself does not have any handlers, but the events propagate through its ancestors.
 
+
+// How it works:
+// 1. Parent Div and Child Div both have event handlers for the capturing and bubbling phases.
+// 2. Clicking the button inside the Child Div triggers events in the following order:
+//          A. Capturing Phase: From the root (Parent Div) down to the button:
+//                    Parent: Capturing Phase
+//                    Child: Capturing Phase
+//          B. Bubbling Phase: From the button back up to the root:
+//                    Child: Bubbling Phase
+//                    Parent: Bubbling Phase
+
