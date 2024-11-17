@@ -5,7 +5,7 @@ export const ACTION3 = "ACTION3";
 export const function1 = (data) => {
     return async (dispatch, getState) => {
         // Access the current value of `value1` in the state
-        const currentValue1 = getState().data1;
+        const currentValue1 = getState().award.data1;
 
         console.log("Current value of value1:", currentValue1); // Optional: log the current value
 

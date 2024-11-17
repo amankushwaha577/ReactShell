@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { function1 } from "./store/awards/awardAction";
+import { function1, ACTION1 } from "./store/awards/awardAction";
 
 function App() {
   const { data1 } = useSelector((state) => state.award);
@@ -12,6 +12,9 @@ function App() {
       <h1>Hello</h1>
       <button onClick={() => dispatch(function1(data))}>Button</button>
       {data1}
+
+      <br/>
+      <button onClick={() => dispatch({type: ACTION1, payload: "aman"})}>Button</button>
     </div>
   );
 }
