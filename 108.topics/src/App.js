@@ -9,6 +9,7 @@ import GET from './Components/APIs/GET';
 import Capturing from './Components/Events/EventPrevention/StopPropagation/Capturing';
 import BothBubblingTrickling from './Components/Events/EventPropagation/BothBubblingTrickling';
 import Bubbling from './Components/Events/EventPropagation/Bubbling';
+import EventDelegation from './Components/Events/EventDelegation/EventDelegation';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <GET /> <hr />
 
       {/* 7.Event Propagation*/}
+      <EventDelegation/>
       <Capturing />
       <Bubbling />
       <BothBubblingTrickling />

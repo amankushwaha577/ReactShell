@@ -2,13 +2,13 @@ import React from 'react';
 
 function EventDelegation() {
   const handleClick = (event) => {
-    if (event.target.tagName === 'BUTTON') {
+    // if (event.target.tagName === 'BUTTON') {
       console.log(`Button ${event.target.textContent} clicked!`);
-    }
+    // }
   };
 
   return (
-    <div onClick={handleClick}>
+    <div onclick={handleClick} style={{padding:"50px"}}>
       <button>Button 1</button>
       <button>Button 2</button>
       <button>Button 3</button>
