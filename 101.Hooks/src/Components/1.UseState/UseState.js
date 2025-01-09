@@ -26,5 +26,5 @@ export default UseState;
 
 // UseState() : This Hook allows us to manage and Hold state.
 // A. Takes an initial value as an argument and Returns array containing 2 values : state & function to change state.
-// B. State Setter Function is Used to update state, not directly.
+// B. State Setter Function is Used to update state, it can't be directly.
 //    Asynchronous Updates: State updates are asynchronous; it does't reflects immediately.
