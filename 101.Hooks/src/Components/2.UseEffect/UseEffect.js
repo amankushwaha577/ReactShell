@@ -33,7 +33,7 @@ export default UseEffect;
 // 1. SideEffects: Any operation happen after Rendering process is called SideEffect Operation.
 //    we need to Handle Sideeffects because sometimes we need to :
 // (i).   Sometimes we need to fetch data from external world through APIs.
-// (ii).  Sometimes we need to clean events/timers after use (after render).
+// (ii).  Sometimes we need to clean events/timers after use (after render) to optimize memory.
 // (iii). sometimes we need to do Manual DOM manipulation using Vanilla JS.
 
 
