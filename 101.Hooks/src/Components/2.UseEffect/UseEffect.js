@@ -30,30 +30,37 @@ const UseEffect = () => {
 
 export default UseEffect;
 
-// SideEffects: Any operation happen after Rendering process is called SideEffect Operation.
-// we need to Handle Sideeffects because sometimes we need to :
-// (i).   Sometime we need to fetch data from external world through APIs.
-// (ii).  Sometimes events/timers need to be clean after use (after render).
+// 1. SideEffects: Any operation happen after Rendering process is called SideEffect Operation.
+//    we need to Handle Sideeffects because sometimes we need to :
+// (i).   Sometimes we need to fetch data from external world through APIs.
+// (ii).  Sometimes we need to clean events/timers after use (after render).
 // (iii). sometimes we need to do Manual DOM manipulation using Vanilla JS.
 
-// 1. The useEffect hook is used to perform side effects in functional components, such as 
+
+// 2. The useEffect hook is used to perform side effects in functional components, such as 
 //    (i).   data fetching from API, 
 //    (ii).  Event subscriptions/ cleanup, 
 //    (iii). Timer setup/ cleanup,
 //    (iii). Manual DOM manipulation using Vanilla JS.
 
-// 2. It combines the functionality of several lifecycle methods of class components
+
+// 3. It combines the functionality of several lifecycle methods of class components
 //    (i).   componentDidMount,
 //    (ii).  componentDidUpdate, and
 //    (iii). componentWillUnmount.
 
-// 3. Dependency Array:
+
+
+// A. Dependency Array:
 // ----------------------------------------------------------------
-// Empty []: Runs only on mount (like componentDidMount).
-// No array: Runs on every render (initial + updates).
-// Specified dependencies: Runs initial + when dependencies change (e.g., [count]).
+// (i).  Empty []: Runs only on mount (like componentDidMount).
+// (ii). No array: Runs on every render (initial + Every time in any state update).
+// (iii).Specified dependencies: Runs initial + when dependencies change (e.g., [count]).
+
+// Note: In React 18+ Strict Mode, rendering happens twice in development mode but only once in production. 
+// This behavior is intentional and only affects development mode to help you identify side effects and bugs early.
 
 
-// Cleanup Function: 
+// B. Cleanup Function: 
 // ------------------------------------------
-// The function returned from useEffect runs on component unmount to clean up resources (e.g., clear timers, unsubscribe).
+// (i). The function returned from useEffect runs on component unmount to clean up resources (e.g., clear timers, unsubscribe).
