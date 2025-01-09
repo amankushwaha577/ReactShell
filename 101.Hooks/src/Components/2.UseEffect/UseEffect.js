@@ -30,6 +30,11 @@ const UseEffect = () => {
 
 export default UseEffect;
 
+// SideEffects: Any operation happen after Rendering process is called SideEffect Operation.
+// we need to Handle Sideeffects because sometimes we need to :
+// (i).   Sometime we need to fetch data from external world through APIs.
+// (ii).  Sometimes events/timers need to be clean after use (after render).
+// (iii). sometimes we need to do Manual DOM manipulation using Vanilla JS.
 
 // 1. The useEffect hook is used to perform side effects in functional components, such as 
 //    (i).   data fetching from API, 
@@ -42,7 +47,7 @@ export default UseEffect;
 //    (ii).  componentDidUpdate, and
 //    (iii). componentWillUnmount.
 
-// Dependency Array:
+// 3. Dependency Array:
 // ----------------------------------------------------------------
 // Empty []: Runs only on mount (like componentDidMount).
 // No array: Runs on every render (initial + updates).
