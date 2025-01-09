@@ -7,7 +7,8 @@ const UseState = () => {
   // 1. state initialization in React with useState() is synchronous.
   // Immediate OP: ['Aman', ƒ]
 
-  // 2. but state updates are asynchronous. It can only be catch by sideeffect hook useEffect() / useLayoutEffect().
+  // 2. but state updates are asynchronous. it does't reflects immediately.
+  //    It can only be catch by sideeffect hook useEffect() / useLayoutEffect().
 
   return (
     <>
@@ -26,5 +27,6 @@ export default UseState;
 
 // UseState() : This Hook allows us to manage and Hold state.
 // A. Takes an initial value as an argument and Returns array containing 2 values : state & function to change state.
-// B. State Setter Function is Used to update state, it can't be directly.
-//    Asynchronous Updates: State updates are asynchronous; it does't reflects immediately.
+// B. State Setter Function is Used to update state.
+//    state can't be update directly. If we do x ="Aman Kushwaha"  state will change but it will not trigger re-render.
+
