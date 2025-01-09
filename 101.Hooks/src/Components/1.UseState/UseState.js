@@ -1,24 +1,30 @@
 import React, { useState } from "react";
 
 const UseState = () => {
-  const [x, setX] = useState("UseState");
+  const [x, setX] = useState("Aman");
 
-  let temp = useState("Returns array : [state, Function to change State]");
-  console.log(temp);
-  // OP: ['Printing Complete UseState', ƒ]
+  console.log(x); 
+  // 1. state initialization in React with useState() is synchronous.
+  // Immediate OP: ['Aman', ƒ]
 
-  return <div>{x}</div>;
+  // 2. but state updates are asynchronous. It can only be catch by sideeffect hook useEffect() / useLayoutEffect().
+
+  return (
+    <>
+      <div>{x}</div>
+      <button onClick={() => setX((prev) => prev + " Kushwaha")}>Button</button>
+      {/* 3. Functional Updates: Use functional updates (prevState => ...) for changes based on previous state. */}
+      {/* 4. Re-renders: Every state change triggers a re-render of the component. */}
+    </>
+  );
 };
 
 export default UseState;
 
+// Definition : Hooks are functions that allows us to work with state and lifecycle methods.
+// ----------------------------------------------------------------------------------------
 
-// Here are some key points to remember about useState:
-
-// UseState Returns array containing 2 values : state & function to change state.
-// Initial Value: useState takes an initial value as an argument.
-// State Setter Function: Use the provided setter function to update state, not directly.
-// Asynchronous Updates: State updates are asynchronous; don't rely on immediate changes.
-// Functional Updates: Use functional updates (prevState => ...) for changes based on previous state.
-// Re-renders: Every state change triggers a re-render of the component.
-// Only in Functional Components: useState is only usable within functional components.
+// UseState() : This Hook allows us to manage and Hold state.
+// A. Takes an initial value as an argument and Returns array containing 2 values : state & function to change state.
+// B. State Setter Function is Used to update state, not directly.
+//    Asynchronous Updates: State updates are asynchronous; it does't reflects immediately.
