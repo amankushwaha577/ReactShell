@@ -89,3 +89,9 @@ function Content() {
 //                                  ------consumer children--------  // value = 8
 //              <OurContextObject.Provider />
 
+
+// Question 5 : value prop should only be called as "value" in Provider 
+//              <OurContextObject.Provider theme={theme}>                   // Warning :  The `value` prop is required for the ..
+//                                         ------consumer children--------
+//              <OurContextObject.Provider />
+//              Also Code will not work.
