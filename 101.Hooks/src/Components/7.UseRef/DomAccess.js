@@ -18,11 +18,12 @@ function DomAccess() {
 export default DomAccess;
 
 // const ref = useRef(initialValue)
+// means : ref.current = initialValue;
 // --------------------------------------
 
-// 1. initialValue: The initial value assigned to the reference. For DOM elements, this is typically null.
+// 1. initialValue: The initial value assigned to the reference.
 // 2. useRef returns an object with a single property => .current,
-//    which holds the value (initially = initialValue). You can set or get ref.current directly.
+//    .current holds the value (initially = initialValue). You can set or get ref.current directly.
 //    Changes to .current don’t trigger a re-render, making it useful for cases where the value should persist but not affect the UI directly.
 
 // Uses of useRef() :
