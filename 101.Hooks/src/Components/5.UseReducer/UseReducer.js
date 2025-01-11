@@ -32,25 +32,39 @@ function UseReducer() {
 export default UseReducer
 
 
-// When -
+// Introduction -
 // ----------------------------
-// The useReducer hook in React is an alternative to useState for managing more complex state logic.
-// It is typically used when the state depends on multiple values or actions, or when you need to perform more sophisticated state updates.
+// A. The useReducer() hook is an alternative to useState. 
+// B. It's for managing more complex state logic using reducer function.
+
 
 
 // Syntax -
 // -------------------------------
-// const [state, dispatch] = useReducer(reducer, initialState);
-// 1. reducer: A function that takes the current state and an action, then returns a new state. It determines how the state should change based on the action type.
-// 2. initialState: The initial state value for the reducer.
-// 3. state: The current state value.
-// 4. dispatch: A function used to send actions to the reducer.
+// const [state, dispatch] = useReducer(reducer, initialArg, init(optional function));
+
+// 1. reducer(): reducer function defines how state will change.
+//               A. Always must take 2 arguments ( state, action ). || state & action can be of any type.
+//               B. Always must return next state.
+//               C. Always Must be pure function ( should not have any sideeffect like API call)
+//
+//    reducer(state, action) {  }
+//    i).  State : is current state
+//    ii). action: is Plain object generally contains type field with payload.
+//                 {type :     , payload:    }
+
+// 2. initialArg: It's is the initial value of state. But how initial state is calculated depends on init() function.
+// 3. init:  It takes 'initialArg' as argument and returns new initial state after our calculations. 
+//    i). If init() function is  present  => than init(initialArg) { returned value will be initialState }
+//    ii).If init() function is't present => initialArg will be initialState.
+
+
+// Return Values : returns array of 2 values [state, dispatch].
+// ---------------------
+// 1. state: The current state value.
+//    i). If init() function is  present  => than init(initialArg) { returned value will be initialState }
+//    ii).If init() function is't present => initialArg will be initialState.
+
+// 2. dispatch(): dispatch is a function used to send action to the reducer() function + triggers re-render.
 //              dispatch(action) | dispatch({type : _______ , payload : _______ })
-
-
-// Reducer(state, action) Function -
-// ----------------------------------
-// The reducer function is where you define how state should change in response to different actions. It takes two arguments:
-// 1. state: The current state.
-// 2. action: An object {type : _______ , payload : _______ } that typically contains a type field and other necessary data for the state update.
 
