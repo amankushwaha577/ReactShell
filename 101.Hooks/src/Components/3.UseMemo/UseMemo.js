@@ -54,7 +54,7 @@ export default UseMemo
 //    useCallback()  caches whole function definition (reference) + It will not recreates function in each re-render.
 //         calculateFunction(a,b) { return xxx } will not be recreated in each re-render.
 //    
-// 2. if we pass 'memoizedValue' as a prop in child it will cause re-render in child 
+// 2. if we pass 'memoizedValue' function as a prop in child it will cause re-render in child 
 //    because In each re-render in Parent Function will be recreated. 
 //    So reference of calculateFunction(a,b) { return xxx } will change in each re-render in parent. 
 //    So Child will think its prop is changed And it will re render itself.
