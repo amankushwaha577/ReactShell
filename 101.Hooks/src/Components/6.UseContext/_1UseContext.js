@@ -53,7 +53,7 @@ function Content() {
 //                                                       ------consumer children--------
 //                                              -----value can be accessed here no matter how deep it is ----
 //                                   <OurContextObject.Provider />
-//  (i). OurContextObject.Consumer : Outdated ( It was used before useContext())
+//  (ii). OurContextObject.Consumer : Outdated ( It was used before useContext())
 
 
 // B. useContext(OurContextObject): 
