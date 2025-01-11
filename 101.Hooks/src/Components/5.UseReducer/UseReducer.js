@@ -51,7 +51,7 @@ export default UseReducer
 //    reducer(state, action) {  }
 //    i).  State : is current state
 //    ii). action: is Plain object generally contains type field with payload.
-//                 {type :     , payload:    }
+//                 like : {type :     , payload:    }
 
 // 2. initialArg: It's is the initial value of state. But how initial state is calculated depends on init() function.
 // 3. init:  It takes 'initialArg' as argument and returns new initial state after our calculations. 
