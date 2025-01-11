@@ -40,5 +40,31 @@ function UseImperativeHandle() {
 
 export default UseImperativeHandle;
 
-// In React, the useImperativeHandle hook works with forwardRef to restrict complete access of child component to Parent component.
-// instead of giving direct access to the child’s entire ref.
+
+/* useImperativeHandle : 
+------------------------------
+   When you use useImperativeHandle with forwardRef, 
+   only the methods or properties explicitly defined inside the createHandle function will be accessible to the parent.
+   other than these nothing will be allowed to parent.
+
+        useImperativeHandle(ref, () => ({
+          focus: () => inputRef.current.focus(),
+          clear: () => inputRef.current.value = ''
+        }));
+
+  ✅ Allowed in Parent:
+     inputRef.current.focus(); // Works
+     inputRef.current.clear(); // Works
+ 
+  ❌ Not Allowed (Restricted Operations):
+     inputRef.current.value = 'Hello';     // ❌ Error, direct value access not exposed.
+     inputRef.current.style.color = 'red'; // ❌ Error, style access restricted.
+
+*/
+
+// useImperativeHandle(ref, createHandle, [deps]) :
+// ------------------------------------------------
+// 1. ref: The ref passed from the parent component.
+// 2. createHandle: A function that returns the object you want to expose.
+// 3. deps: Optional dependency array to update the exposed object when values change.
+
