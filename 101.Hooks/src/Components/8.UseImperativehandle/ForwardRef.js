@@ -22,5 +22,20 @@ function ForwardRef() {
 export default ForwardRef;
 
 
-// In React, forwardRef is a function that allows a component to forward its ref to a child component,
-//  enabling the parent to directly access the DOM element or child component's instance.
+// forwardRef HOC:
+// ----------------------------------------------
+// using forwardRef() Parent can directly access the DOM element of child component..
+
+// In parent :
+// 1. const inputRef = useRef();         
+// 2. <ChildComponent ref={inputRef} />  
+
+// In Child : 
+// 3. const ChildComponent = React.forwardRef((props, ref) => {  
+//             return <input ref={ref} {...props} />;
+//  });
+
+// How it Works:
+// useRef Hook: useRef creates a reference in the parent component.
+// forwardRef: Passes the ref directly to the input element inside the child component.
+// DOM Access: The parent can directly manipulate the input field using the ref.
