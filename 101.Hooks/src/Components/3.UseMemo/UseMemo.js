@@ -51,16 +51,14 @@ export default UseMemo
 // Prevention of Child Re-rendering :
 // 1. useMemo() only caches returned value of function not function reference + It always recreates function in each re-render.
 //         calculateFunction(a,b) { return xxx } will be recreated in each re-render.
-//    useCallback()  caches whole function + It will not recreates function in each re-render.
+//    useCallback()  caches whole function definition (reference) + It will not recreates function in each re-render.
 //         calculateFunction(a,b) { return xxx } will not be recreated in each re-render.
 //    
 // 2. if we pass 'memoizedValue' as a prop in child it will cause re-render in child 
-//    because reference of calculateFunction(a,b) will change in each re-render in parent. 
+//    because In each re-render in Parent Function will be recreated. 
+//    So reference of calculateFunction(a,b) { return xxx } will change in each re-render in parent. 
 //    So Child will think its prop is changed And it will re render itself.
-// Preventing re-renders in child components by avoiding re-creation of functions or objects passed as props.
-//    Suppose we are passing functions as a prop in Child Component and supppose a render happened in parent in this time 
-//    Parent will again recreate the same function and this time its reference will be changed. So Child will think its prop is changed
-//    And it will re render itself. It caused unnnecessary re-render in Child To avoid this swrap useMemo to function with dependecies.
+
 
 
 // Different BW useEffect() vs useMemo():
