@@ -47,6 +47,10 @@ export default UseReducer
 //               A. Always must take 2 arguments ( state, action ). || state & action can be of any type.
 //               B. Always must return next state.
 //               C. Always Must be pure function ( should not have any sideeffect like API call)
+//                  Ques. Why ? Reducer is pure function.
+//                  Ans.  i).  State Immutability : Never modifies state + returns new state with modifications.
+//                        ii). Always same output for same input.
+//                        iii).No side Effects.
 //
 //    reducer(state, action) {  }
 //    i).  State : is current state
@@ -68,3 +72,11 @@ export default UseReducer
 // 2. dispatch(): dispatch is a function used to send action to the reducer() function + triggers re-render.
 //              dispatch(action) | dispatch({type : _______ , payload : _______ })
 
+
+
+// Ques1 : is it true ?
+//         case 'decrement':
+//         return { state.count = state.count - 1 }; 
+// OP: False , reducer is Pure function -> Never modifies state + returns new state with modifications.
+//     case 'decrement':
+//     return { ...state, count: state.count - 1 };
