@@ -35,7 +35,7 @@ function App() {
       <ForwardRef/> { /* To Access DOM element of Child,  parent sends a ref and Child take it using forwardRef(props, ref) */}
       <UseImperativeHandle/> <hr/>{/* Child uses useImperativeHandle to restrict parent to completely access DOM */}
 
-      <UseLayoutEffect/>
+      <UseLayoutEffect/> {/* Runs After render but before paint + Synchronously*/}
       
 
       
