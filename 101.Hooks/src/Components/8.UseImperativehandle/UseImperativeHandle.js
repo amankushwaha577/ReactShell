@@ -41,6 +41,13 @@ function UseImperativeHandle() {
 export default UseImperativeHandle;
 
 
+
+// useImperativeHandle(ref, createHandle, [deps]) :
+// ------------------------------------------------
+// 1. ref: The ref passed from the parent component.
+// 2. createHandle: A function that returns the object containing methods that you want to expose to parent.
+// 3. deps: Optional dependency array to update the exposed object when values change.
+
 /* useImperativeHandle : 
 ------------------------------
    When you use useImperativeHandle with forwardRef, 
@@ -63,9 +70,4 @@ export default UseImperativeHandle;
 
 */
 
-// useImperativeHandle(ref, createHandle, [deps]) :
-// ------------------------------------------------
-// 1. ref: The ref passed from the parent component.
-// 2. createHandle: A function that returns the object containing methods that you want to expose to parent.
-// 3. deps: Optional dependency array to update the exposed object when values change.
 
