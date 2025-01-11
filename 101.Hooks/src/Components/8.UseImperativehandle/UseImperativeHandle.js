@@ -54,19 +54,20 @@ export default UseImperativeHandle;
    only the methods or properties explicitly defined inside the createHandle function will be accessible to the parent.
    other than these nothing will be allowed to parent.
 
+        const internalRef = useRef();
         useImperativeHandle(ref, () => ({
-          focus: () => inputRef.current.focus(),
-          clear: () => inputRef.current.value = ''
+          focus: () => internalRef.current.focus(),
+          clear: () => internalRef.current.value = ''
         }));
-
+        <input ref={internalRef} {...props} />
 
   ✅ Allowed in Parent:
-     inputRef.current.focus(); // Works
-     inputRef.current.clear(); // Works
+     parentRef.current.focus(); // Works
+     parentRef.current.clear(); // Works
  
   ❌ Not Allowed (Restricted Operations):
-     inputRef.current.value = 'Hello';     // ❌ Error, direct value access not exposed.
-     inputRef.current.style.color = 'red'; // ❌ Error, style access restricted.
+     parentRef.current.value = 'Hello';     // ❌ Error, direct value access not exposed.
+     parentRef.current.style.color = 'red'; // ❌ Error, style access restricted.
 
 */
 
