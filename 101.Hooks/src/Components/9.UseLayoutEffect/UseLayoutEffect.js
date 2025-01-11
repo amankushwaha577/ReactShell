@@ -30,6 +30,8 @@ export default UseLayoutEffect;
 
 
 /*
+useLayoutEffect : 
+------------------------------------------
 useLayoutEffect is a React Hook used for running side effects synchronously after the DOM mutations(after rendering) 
 but before the browser paints the screen.
 
