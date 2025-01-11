@@ -1,15 +1,15 @@
 import React, { useReducer } from 'react';
 
 function UseReducer() {
-  const initialState = { count: 0 };
+  const initialState = { count: 0, name: 'Aman' };
 
-  // Reducer function that updates the count
+  // Reducer function that updates the state
   function reducer(state, action) {
     switch (action.type) {
       case 'increment':
-        return { count: state.count + action.payload };
+        return { ...state, count: state.count + action.payload }; // Spread added to preserve 'name'
       case 'decrement':
-        return { count: state.count - 1 };
+        return { ...state, count: state.count - 1 }; // Spread added to preserve 'name'
       default:
         return state;
     }
