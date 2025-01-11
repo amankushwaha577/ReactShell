@@ -36,6 +36,7 @@ export default DomAccess;
 // 
 // 2. Manipulating DOM Elements : Here inputRef.current holding reference of <Input/> so we can set its value without re-rendering.
 //                                ( By directly accessing Node we have bypassed react rules so react did't detect any change => No render)
+//                                Note : useState() is asynchronous | useRef() is synchronous()
 //    EX : inputRef.current.value = 10; 
 // 
 // 2. Storing Mutable Data: Holds values that change over time, without causing re-renders, useful for things like timers or counters.
