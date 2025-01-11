@@ -1,25 +1,35 @@
-import React, { useRef, useState } from 'react';
+ import React, { useState, useEffect, useRef } from 'react';
 
 function MutableValueWithNoRerender() {
-  const countRef = useRef(0); // Initial value is 0
-  const [_, setRerender] = useState(false); // Just for triggering re-render to show updates
+    const [count, setCount] = useState(0);
+    const prevCountRef = useRef(); // Creating a ref to store the previous value
 
-  function incrementCount() {
-    countRef.current += 1; // Update ref value
-    setRerender((prev) => !prev); // Re-render component to show the latest ref value
-  }
+    useEffect(() => {
+        prevCountRef.current = count; // Updating ref after each render
+    });
 
-  return (
-    <div>
-      <p>Button clicked {countRef.current} times</p>
-      <button onClick={incrementCount}>Increment</button>
-    </div>
-  );
+    return (
+        <div>
+            <p>Current Count: {count}</p>
+            <p>Previous Count: {prevCountRef.current}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    );
 }
 
 export default MutableValueWithNoRerender;
 
-
-// 2. Storing Mutable Data: Holds values that change over time, without causing re-renders, useful for things like timers or counters.
-
-// No Re-Render: Changes to ref.current don’t cause re-renders, unlike useState.
+// 1st Render : 
+// -------------
+//               count  = 0
+//               prev   = - (Currentl Nothing) 
+// Rendering Completed Now sideffect useEffect runs :  prevCountRef.current = 0 <---------------------- |
+// But it will not trigger re-render so it will not print on UI.                                        |
+//                                                                                                      |
+//                                                                                                      |
+// 2nd Render (button Click):                                                                           |
+// -------------                                                                                        |
+//               count  = 1                                                                             |
+//               prev   = 0   <--------------------------------------------------------------------------
+// Rendering Completed Now sideffect useEffect runs :  prevCountRef.current = 1
+// But it will not trigger re-render so it will not print on UI.   
