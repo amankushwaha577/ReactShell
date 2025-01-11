@@ -5,7 +5,7 @@ import UseCallback from './Components/4.UseCallback/UseCallback';
 import UseReducer from './Components/5.UseReducer/UseReducer';
 import DeaultValue from './Components/6.UseContext/Defaultvalue';
 import MultipleContextAPI from './Components/6.UseContext/MultipleContextAPI';
-import UseContext from './Components/6.UseContext/UseContext';
+import UseContext from './Components/6.UseContext/_1UseContext';
 import DomAccess from './Components/7.UseRef/DomAccess';
 import MutableValueWithNoRerender from './Components/7.UseRef/MutableValueWithNoRerender';
 import MutableValue from './Components/7.UseRef/MutableValueWithNoRerender';
