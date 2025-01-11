@@ -39,6 +39,6 @@ export default DomAccess;
 //                                Note : useState() is asynchronous | useRef() is synchronous()
 //    EX : inputRef.current.value = 10; 
 // 
-// 2. Storing Mutable Data: Holds values that change over time, without causing re-renders, useful for things like timers or counters.
+// 3. Storing Mutable Data: Holds values that change over time, without causing re-renders, useful for things like timers or counters.
 
 // No Re-Render: Changes to ref.current don’t cause re-renders, unlike useState.
