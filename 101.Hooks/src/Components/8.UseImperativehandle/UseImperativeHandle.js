@@ -52,6 +52,7 @@ export default UseImperativeHandle;
           clear: () => inputRef.current.value = ''
         }));
 
+
   ✅ Allowed in Parent:
      inputRef.current.focus(); // Works
      inputRef.current.clear(); // Works
@@ -65,6 +66,6 @@ export default UseImperativeHandle;
 // useImperativeHandle(ref, createHandle, [deps]) :
 // ------------------------------------------------
 // 1. ref: The ref passed from the parent component.
-// 2. createHandle: A function that returns the object you want to expose.
+// 2. createHandle: A function that returns the object containing methods that you want to expose.
 // 3. deps: Optional dependency array to update the exposed object when values change.
 
