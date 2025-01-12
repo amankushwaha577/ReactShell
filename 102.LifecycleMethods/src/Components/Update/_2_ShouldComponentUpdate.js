@@ -37,12 +37,14 @@ export default _2_ShouldComponentUpdate;
 🎯 What is shouldComponentUpdate(nextProps, nextState)?
 --------------------------------------------------------
    a. Purpose: Controls if the component should re-render or not.
-   b. Default Behavior: Always returns true.
+   b. Default Behavior: Always returns true
+   c. returns : true - render / false - not render.
 
 
-🎯 Functional Equivalent of shouldComponentUpdate() – React.memo()
--------------------------------------------------------------------
+🎯 Functional Equivalent of shouldComponentUpdate() – React.memo(prevProps, nextProps) HOC
+---------------------------------------------------------------------------------------------
    React.memo() wraps your component and optimizes its rendering by checking if the props have changed.
+   returns : true - not render / false - render.
 
     1️⃣ React.memo() Syntax:
     ------------------------------------------------------
