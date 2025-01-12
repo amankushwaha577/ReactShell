@@ -43,6 +43,22 @@ but before the browser paints the screen.
           }, [dependencies]);
 
 
+1. Impure : It's Impure because it directly interacts/ manipulate the DOM, which is side effects.
+            Making an API call inside useLayoutEffect is possible, but it's not recommended. It will block UI.
+
+          useLayoutEffect(() => {
+              // API Call (but blocking rendering)
+              const fetchData = async () => {
+                const response = await fetch('https://api.example.com/data');
+                const result = await response.json();
+                setData(result);
+              };
+              fetchData();
+            }, []);
+
+2. Synchronous : It will block UI.
+
+
 Feature	useEffect	vs useLayoutEffect :
 -------------------------------------
 // | 🛠️ **Feature**            | 🎯 **useEffect**                     | 🧩 **useLayoutEffect**            |
@@ -51,5 +67,6 @@ Feature	useEffect	vs useLayoutEffect :
 // | 📦 **Use Case**           | Non-blocking side effects ✅         | Blocking layout adjustments 🚧    |
 // | ⚡ **Performance Impact** | Better performance 🚀                | Might slow rendering 🐢           |
 // | 🔄 **Execution Type**     | Asynchronous 🌐                      | Synchronous 🕰️                    |
+
 
 */

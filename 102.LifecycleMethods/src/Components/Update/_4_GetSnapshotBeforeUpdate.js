@@ -56,7 +56,7 @@ If you need to capture information from the DOM (like scroll position, form inpu
        console.log('Previous scrollY:', snapshot);
   }
 
-🎯 Pure, Sync, or Async?
+🎯 Pure + Sync:
 -------------------------
 1. Sync: It runs synchronously.
 2. Pure: It’s a pure method (i.e., no side effects allowed within getSnapshotBeforeUpdate()).
@@ -68,7 +68,7 @@ If you need to capture information from the DOM (like scroll position, form inpu
 /*
 📚 What is useLayoutEffect()?
 -------------------------------------
-It runs synchronously after the render + after DOM is updated but before the browser paints the DOM.
+It runs synchronously after the render + after DOM is updated + but before the browser paints the DOM.
 so it's perfect for doing things like DOM measurements or layout adjustments that could cause a visual flicker if done after the paint.
 
 useLayoutEffect(() => {
@@ -78,6 +78,24 @@ useLayoutEffect(() => {
             };
           }, [dependencies]);
 
+
+ 🎯 Impure + Sync:
+-------------------------
+
+1. Impure : It's Impure because it directly interacts/ manipulate the DOM, which is side effects.
+            Making an API call inside useLayoutEffect is possible, but it's not recommended. It will block UI.
+
+          useLayoutEffect(() => {
+              // API Call (but blocking rendering)
+              const fetchData = async () => {
+                const response = await fetch('https://api.example.com/data');
+                const result = await response.json();
+                setData(result);
+              };
+              fetchData();
+            }, []);
+
+2. Synchronous : It will block UI.
 */
 
 
