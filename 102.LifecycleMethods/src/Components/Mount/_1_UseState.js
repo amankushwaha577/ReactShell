@@ -14,8 +14,13 @@ function Example() {
   );
 }
 
+/*
+✅ Key Differences constructor() vs useState():
+     constructor:                                                                                 useState:
+-----------------------------------------------------------------------------------------------------------------------------------
+   1. Synchronous                                                                               Asynchronous 
+   (this.state.count = 5; (happens immediately in constructor))                    (setCount(count + 1); doesn't reflect immediately.) || (state updates may batch together)   
 
-// Constructor is synchronous 
-// usestate is asynchronous
+   2. Not Pure (modifies this)                                                             Pure Function (returns new state)
 
-// both are pure
+*/
