@@ -11,3 +11,5 @@ const _2_UseState = ({ value }) => {
 };
 
 export default _2_UseState
+
+// ✅ lazy initializer in functional component's useState to update state before rendering
