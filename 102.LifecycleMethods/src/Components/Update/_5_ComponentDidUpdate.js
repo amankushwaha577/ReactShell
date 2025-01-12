@@ -35,3 +35,20 @@ class ExampleComponent extends React.Component {
     }
   }
   
+/*
+componentDidUpdate:
+------------------
+It is triggered after the component has been rendered + the changes have been committed to the DOM + UI is printed.
+
+Points to Note 📝:
+------------------------
+1. Not Called on Initial Render:
+   componentDidUpdate() doesn't run when the component mounts (first render). It only runs when props or state change.
+
+2. is used to perform side effects in functional components, such as 
+      (i).   data fetching from API, 
+      (ii).  Event subscriptions/ cleanup, 
+      (iii). Timer setup/ cleanup,
+      (iii). Manual DOM manipulation using Vanilla JS.
+
+*/
