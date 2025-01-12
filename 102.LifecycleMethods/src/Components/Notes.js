@@ -8,10 +8,10 @@ C. Unmounting: componentWillUnmount()
 
 🌱 Mounting (Initial Render)
 -----------------------------------------------------
-1. constructor() 🛠️ – Initializes state & binds methods.                                   --------|
-2. static getDerivedStateFromProps(nextProps, prevState) 📦 – Sync state with props before render--|-> Synchronous
-3. render() 🎨 – Renders UI (required method).                                             --------|
-4. componentDidMount() ✅ – Runs after the component is rendered (ideal for API calls).    ----------> Synchronous but can perform Asynchronous Code
+1. constructor() 🛠️ – Initializes state & binds methods.                                   -----------------|
+2. static getDerivedStateFromProps(nextProps, prevState) 📦 – Sync state with props before render-----------|-> Synchronous
+3. render() 🎨 – Renders UI (required method).                                             -----------------|
+4. componentDidMount() ✅ – Runs after the component is rendered (ideal for API calls).    -------------------> Synchronous but can perform Asynchronous Code
 
 constructor() & componentDidMount() is Impure. || constructor directly changes this.state && componentDidMount can have sideeEffects.
 
