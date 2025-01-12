@@ -79,3 +79,23 @@ useLayoutEffect(() => {
           }, [dependencies]);
 
 */
+
+
+// 📊 Comparison: `getSnapshotBeforeUpdate()` vs `useLayoutEffect()` 🧸
+// -------------------------------------------------------------------------
+/*
+| Feature                             | getSnapshotBeforeUpdate (Class)         | useLayoutEffect (Functional)           |
+|-------------------------------------|-----------------------------------------|----------------------------------------|
+| 🕰 Timing                           | Before DOM is updated (after render)   | After DOM is updated (before paint)    |
+| 🚀 Purpose                          | Captures info before DOM updates (e.g., scroll position) | Allows DOM manipulation before paint |
+| 📝 Return                           | Returns a snapshot for componentDidUpdate | No snapshot return (direct DOM interaction) |
+| 🔄 Component Type                   | Class Component                        | Functional Component                  |
+| ⏳ Synchronous/Asynchronous         | Synchronous                            | Synchronous                           |
+| 🧩 Use Case                         | DOM measurements (e.g., scroll position) | Layout manipulation or measurements    |
+| 🛠 Side Effects                      | No side effects (pure)                 | Can cause side effects                 |
+
+visualize:
+render ->                           update DOM ->                   Browser Paint
+          --------------------------            -------------------
+          ( getSnapshotBeforeUpdate )           ( useLayoutEffect )
+*/ 
