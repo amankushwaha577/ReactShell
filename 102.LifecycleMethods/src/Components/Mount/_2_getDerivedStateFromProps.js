@@ -27,3 +27,12 @@ class _2_getDerivedStateFromProps extends React.Component {
 
 
   // getDerivedStateFromProps is synchronous and pure
+/*
+🎯 What is getDerivedStateFromProps?
+    1. Its used to update state on the basis of new props before rendering when props change.
+    2. Its Static Lifecycle Method mean 🧸 Cannot access 'this', 'this.state', 'this.setState' ]
+    3. Its pure function cant use side effects.
+    4. Returns: An object to update state |or| null to keep state unchanged.
+
+    Not Recommend ❌: Rarely used due to complexity. modern alternative useEffect() ✅
+*/
