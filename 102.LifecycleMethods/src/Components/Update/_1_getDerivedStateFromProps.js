@@ -43,5 +43,21 @@ class _2_getDerivedStateFromProps extends React.Component {
       ✅ On Initial Render (Mounting)
       ✅ On Every Update (Re-render)
       ❌ It's not trigger by state change. ✅ Triggered by: Props changing
+*/
 
+
+/*
+We can achieve getDerivedStateFromProps() behavior in a functional component using useEffect! ✅
+Note : useEffect triggers after render() but getDerivedStateFromProps() triggers before render() so its not complete equivalent.
+
+function DerivedStateFunctional({ value }) {
+    const [stateValue, setStateValue] = useState(value);
+
+    useEffect(() => {
+        // 🎯 Sync state only when props change
+        setStateValue(value);
+    }, [value]);  // ✅ Runs only when 'value' prop changes
+
+    return <div>{stateValue}</div>;
+}
 */
