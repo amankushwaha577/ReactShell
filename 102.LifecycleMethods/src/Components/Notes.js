@@ -13,7 +13,7 @@ C. Unmounting: componentWillUnmount()
 3. render() 🎨 – Renders UI (required method).                                     --------
 4. componentDidMount() ✅ – Runs after the component is rendered (ideal for API calls).    | ->    Synchronous but can perform Asynchronous Code
 
-constructor() & componentDidMount() is Impure.
+constructor() & componentDidMount() is Impure. || constructor directly changes this.state && componentDidMount can have sideeEffects.
 
 
 🔄 Updating (State/Props Change)
