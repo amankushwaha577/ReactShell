@@ -22,4 +22,4 @@ class Example extends React.Component {
   }
   
 
-  // Constructor is used to assign state.
+  // 1. constructor() 🛠️ – Initializes state & binds methods.
