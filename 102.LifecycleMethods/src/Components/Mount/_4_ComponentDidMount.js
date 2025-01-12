@@ -57,5 +57,6 @@ componentDidMount() - Synchronous  By Default
 useEffect()         - Asynchronous By Default 💥: 
  -------------------------------------------------
 But both can have async logic inside.
+Both dont block rendering process.
 
 */
