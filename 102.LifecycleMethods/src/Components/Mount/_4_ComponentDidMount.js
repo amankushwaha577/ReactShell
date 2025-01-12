@@ -42,10 +42,11 @@ componentDidMount() runs once only after the initial render and is perfect for s
 Functional Component 🚀 :
 ---------------------------
 Use useEffect with [] to mimic componentDidMount() and run your logic only once after 1st render! 💪       
-*/
 
 
-/*
+
+
+
 1. componentDidMount(), useEffect() are Not pure 💥: 
  -------------------------------------------------
 A. They can have side effects (e.g., data fetching, DOM manipulation, subscriptions). 
@@ -58,5 +59,27 @@ useEffect()         - Asynchronous By Default 💥:
  -------------------------------------------------
 But both can have async logic inside.
 Both dont block rendering process.
+
+
+
+
+Question : We can't do API calling before before 1st render in react. But we can do it in Next.js
+Answer : Next.Js have 2 built in methods to fetch data before 1st render.
+
+         A. getServerSideProps() || SSR (Server Side Rendering) :
+            When you want to fetch data that is dynamic and that changes for every user. Server sends fully rendered HTML page to client. Ex: Facebook 
+            When?           Runs at request time (before every render).
+            Performance?	Slower (Fetch on Request) 🐢
+
+         B. getStaticProps() || SSG (Static Site Generation) :
+            When you want to fetch data that is static and that doesn’t change often (e.g., blog posts, product pages).
+            When?           During build time (before the page is served || npm run build ).
+            Performance?	Fast (Pre-built) ⚡
+
+
+
+
+
+
 
 */
