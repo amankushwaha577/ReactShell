@@ -51,4 +51,11 @@ Points to Note 📝:
       (iii). Timer setup/ cleanup,
       (iii). Manual DOM manipulation using Vanilla JS.
 
+3. It can catch snapshot returned(captured) by getSnapshotBeforeUpdate.
+
+
+Nature:
+A. Synchronous but can perform Asynchronous Code .
+B. componentDidMount() is Impure because it can have sideeEffects all are pure.
+
 */
