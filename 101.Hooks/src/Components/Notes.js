@@ -13,8 +13,8 @@ b. ImPure Function :  Can perform side effects.
 
 3. UseMemo() :
 ----------------------
-a. Synchronous: ✅ Runs immediately before rendering.
-b. Pure: ✅ No side effects.
+a. Synchronous: ✅ Runs synchronously.
+b. Pure: ✅ must not have any side effects.
 
 
 9. useLayoutEffect() :
