@@ -36,7 +36,7 @@ constructor() 🛠️ – Initializes state & binds methods.
                                    A.  Always call super(props) in the constructor if using ( this.state +  this.props ).
                                    B.  If you're not using props, you can simply call super() instead of super(props).
                                    
-                                   i). Without super(props), accessing 'this' will throw an error.
+                                   i). Without super(), accessing 'this' will throw an error.
                                        constructor() {
                                           // ❌ super() missing
                                           this.setState({ count: 5 });    ❌ // Error here
@@ -82,6 +82,19 @@ constructor() 🛠️ – Initializes state & binds methods.
                            this.setState({ count: this.state.count + 1 }); 
                            // ❌ TypeError: Cannot read properties of undefined (reading 'setState')
                   }
+
+
+
+
+
+✅ Key Differences constructor() vs useState():
+     constructor:                                                                                 useState:
+-----------------------------------------------------------------------------------------------------------------------------------
+   1. Synchronous                                                                               Asynchronous 
+   (this.state.count = 5; (happens immediately in constructor))                    (setCount(count + 1); doesn't reflect immediately.) || (state updates may batch together)   
+
+   2. Not Pure (modifies this)                                                             Pure Function (returns new state)
+
 
 
 */
