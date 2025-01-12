@@ -24,7 +24,7 @@ constructor() & componentDidMount() is Impure. || constructor directly changes t
 4. getSnapshotBeforeUpdate(prevProps, prevState)📸– Captures information DOM update (ex. scroll position).--|
 5. componentDidUpdate(prevProps, prevState, snapshot) ✅ – Runs after the update is committed.   -------------> Synchronous but can perform Asynchronous Code 
 
-only componentDidMount() is Impure because it can have sideeEffects all are pure.
+only componentDidUpdate() is Impure because it can have sideeEffects all are pure.
 
 
 💥 Unmounting (Component Removal)
