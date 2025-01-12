@@ -32,3 +32,40 @@ class _2_ShouldComponentUpdate extends Component {
 }
 
 export default _2_ShouldComponentUpdate;
+
+/*
+🎯 What is shouldComponentUpdate(nextProps, nextState)?
+--------------------------------------------------------
+   a. Purpose: Controls if the component should re-render or not.
+   b. Default Behavior: Always returns true.
+
+
+🎯 Functional Equivalent of shouldComponentUpdate() – React.memo()
+-------------------------------------------------------------------
+   React.memo() wraps your component and optimizes its rendering by checking if the props have changed.
+
+    1️⃣ React.memo() Syntax:
+    ------------------------------------------------------
+            const ComponentName = React.memo((props) => {
+            // Component Code
+            return <div>{JSX code}</div>;
+            });
+
+    2️⃣ React.memo() with Custom Comparison Function Syntax: It can be any logic.
+    --------------------------------------------------------
+             const ComponentName = React.memo((props) => {
+                                                                            // Component Code
+                                            return <div>{ JSX code }</div>;
+                                            }, 
+                  (prevProps, nextProps) => {
+                            // Comparison logic
+                            return prevProps.someValue === nextProps.someValue; // Return true if no re-render needed
+            });
+
+
+✅ Key Characteristics of Both shouldComponentUpdate() & React.memo():
+----------------------------------------------------------------------
+1. Pure: ✅ No side effects.
+2. Synchronous: ✅ Runs immediately before rendering.
+3. Performance Boost: ✅ Prevents unnecessary re-renders.
+*/
