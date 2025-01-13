@@ -80,7 +80,8 @@ getDerivedStateFromError() & componentDidCatch() – These two lifecycle methods
 
 🍼 When Error Boundaries Fail to Catch Errors in React? 🧸
 -------------------------------------------------------------------------------------------
-Error boundaries in React are powerful but they don't catch all errors. Here’s where they fail:
+Error boundaries in React are powerful but they don't catch all errors. They can catch errors only on Render() phase. Not outside render().
+Here’s where they fail:
 1. Errors in Event Handlers.
 2. Errors in Asynchronous Code (e.g., Promises & setTimeout).
 3. Errors in Server-Side Rendering (SSR).
