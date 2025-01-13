@@ -1,23 +1,16 @@
 import React from 'react';
-import useFetch from './CustomHooks/useFetch';
+import useCounter from './useCounter';
 
-function App() {
-  const { data, loading, error } = useFetch('https://jsonplaceholder.typicode.com/posts');
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+const Counter = () => {
+  const { count, increment, decrement } = useCounter();
 
   return (
     <div>
-      <h1>Posts</h1>
-      {data.map(post => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </div>
-      ))}
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>➕ Increment</button>
+      <button onClick={decrement}>➖ Decrement</button>
     </div>
   );
-}
+};
 
-export default App;
+export default Counter;
