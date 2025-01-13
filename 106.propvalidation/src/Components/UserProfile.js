@@ -14,8 +14,8 @@ const UserProfile = ({ name, age, isActive }) => {
 // Prop validation
 UserProfile.propTypes = {
   name: PropTypes.string.isRequired, // name must be a string and is required
-  age: PropTypes.number.isRequired,  // age must be a number and is required
-  isActive: PropTypes.bool,          // isActive must be a boolean
+  age: PropTypes.number.isRequired,  // age must be a number and is required   || If it will be missed    it will give warning🚫 in console.
+  isActive: PropTypes.bool,          // isActive must be a boolean             || If wrong type is passed it will give warning🚫 in console.
 };
 
 // Default values for props
@@ -30,6 +30,7 @@ export default UserProfile;
 // correct type and structure. This helps catch bugs and improve the maintainability of your code.
 
 // 1. Key PropTypes:
+//-----------------------------------------------------------
 // PropTypes.string: validates that the prop is a string.
 // PropTypes.number: validates that the prop is a number.
 // PropTypes.bool: validates that the prop is a boolean.
@@ -40,12 +41,20 @@ export default UserProfile;
 // PropTypes.element: validates that the prop is a React element.
 
 // 2. Optional vs Required Props:
+//-----------------------------------------------------------
 // To specify that a prop is required, use .isRequired, e.g., PropTypes.string.isRequired.
 // If you don't use .isRequired, the prop is optional.
 
 // 3. Default Props:
+//-----------------------------------------------------------
 // To set default values for props, you can use defaultProps like in the example above. 
 // This ensures that the component has sensible default values if props are not provided.
+
+// Note:
+// Ques. If prop is marked as 'isRequired' + also its default value is also set to 'defaultProps'
+//       than=> if it's not passed by parent component ?
+// Ans : isRequired will give warning in console.
+//       even if default value is set.
 
 
 // Note : Support for defaultProps will be removed from function components in a future major release in react.
