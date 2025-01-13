@@ -13,8 +13,8 @@ function ControlledComponent() {
 }
 
 
-// Controlled Components: React manages the input value via state. 
-// Uncontrolled Components: The DOM manages the input value. 
+// 1. Controlled Components:   The form elements that are controlled by state. 
+// 2. Uncontrolled Components: The form elements that are controlled by ref (DOM). 
 
 
 // ┌───────────────────────────────┬──────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────┐
