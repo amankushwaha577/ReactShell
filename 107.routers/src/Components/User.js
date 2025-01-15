@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom";
 
 // User Profile Page with dynamic parameter (e.g., /user/:id)
-const UserProfile = () => {
+const User = () => {
     const { id } = useParams(); // Accessing dynamic route parameter
     return <>
     <h1>path="/user/:id" </h1>
     <h1>http://localhost:3000/user/123</h1>
     <hr/>
-    <h1>{"const { \"id\" } = useParams()"}</h1>
+    <h1>{"const { id } = useParams()"}</h1>
     <h2>id - {id}</h2></>;
   };
 
-  export default UserProfile
+  export default User
 
 
 /*

@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Link, NavLink, Outlet, useNavig
 import Home from './Components/Home';
 import About from './Components/About';
 import Login from './Components/Login';
-import UserProfile from './Components/UserProfile';
+import UserProfile from './Components/User';
+import User from './Components/User';
+import Profile from './Components/Profile';
 
 // Setting with nested routes
 const Settings = () => {
@@ -44,7 +46,9 @@ function App() {
             <li><Link to="/">"/"</Link></li>
             <li><Link to="/about">"/about"</Link></li>
             <li><Link to="/login">"/login"</Link></li>
-            <li><Link to="/user/123">"/user/:id" ------------------------------------------------useParams()</Link></li>
+
+            <li><Link to="/user/123">"/user/:id" -----------------------------------------useParams()</Link></li>
+            <li><Link to="/profile/?name=aman&age=24">"/user" ---------------------------------------------useSearchParams()</Link></li>
             <li><Link to="/Settings">"/Settings"</Link></li>
           </ul>
         </nav>
@@ -55,7 +59,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           
           {/* Dynamic Route: User Profile */}
-          <Route path="/user/:id" element={<UserProfile />} />
+          <Route path="/user/:id" element={<User />} />
+          <Route path="/profile" element={<Profile />} />
 
 
           {/* Dashboard with Nested Routes */}
