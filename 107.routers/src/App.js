@@ -52,7 +52,7 @@ function App() {
 
             <li><Link to="/user/123">"/user/:id" -----------------------------------------useParams() || after /: is our dynamic parameter</Link></li>
             <li><Link to="/profile?name=aman&age=24">"/user" ---------------------------------------------useSearchParams() || after ? is our the query parameters</Link></li>
-            <li><Link to="/details?name=aman&age=24">"/user" ---------------------------------------------useLocation() || /details with Query Parameters</Link></li>
+            <li><Link to="/details?name=aman&age=24">"/user" ---------------------------------------------useLocation() || information about the current URL</Link></li>
 
             {/* useLocation() + useNavigate() */}
             <li><Link to="/DataPassingFrom">send data from useNavigate() {"-------->"} To useLocation()</Link></li>
@@ -70,7 +70,7 @@ function App() {
           <Route path="/details" element={<Details />} />
 
           <Route path="/DataPassingFrom" element={<DataPassingFrom />} />{/*---state---------> */}
-          {/*                                                                                | */}
+          {/* send data from useNavigate() --------> To useLocation()                        | */}
           <Route path="/DataPassingTo" element={<DataPassingTo />} />    {/*<----------------- */}
 
 
