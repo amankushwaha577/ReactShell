@@ -41,11 +41,11 @@ function App() {
       <div>
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/user/123">User Profile (ID 123)</Link></li>
-            <li><Link to="/Settings">Settings</Link></li>
+            <li><Link to="/">"/"</Link></li>
+            <li><Link to="/about">"/about"</Link></li>
+            <li><Link to="/login">"/login"</Link></li>
+            <li><Link to="/user/123">"/user/:id" ------------------------------------------------useParams()</Link></li>
+            <li><Link to="/Settings">"/Settings"</Link></li>
           </ul>
         </nav>
 
