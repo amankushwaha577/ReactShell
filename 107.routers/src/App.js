@@ -7,6 +7,9 @@ import Login from './Components/Login';
 import UserProfile from './Components/User';
 import User from './Components/User';
 import Profile from './Components/Profile';
+import Details from './Components/Details';
+import DataPassingFrom from './Components/DataPassingFrom';
+import DataPassingTo from './Components/DataPassingTo';
 
 // Setting with nested routes
 const Settings = () => {
@@ -47,9 +50,12 @@ function App() {
             <li><Link to="/about">"/about"</Link></li>
             <li><Link to="/login">"/login"</Link></li>
 
-            <li><Link to="/user/123">"/user/:id" -----------------------------------------useParams()</Link></li>
-            <li><Link to="/profile/?name=aman&age=24">"/user" ---------------------------------------------useSearchParams()</Link></li>
-            <li><Link to="/Settings">"/Settings"</Link></li>
+            <li><Link to="/user/123">"/user/:id" -----------------------------------------useParams() || after /: is our dynamic parameter</Link></li>
+            <li><Link to="/profile?name=aman&age=24">"/user" ---------------------------------------------useSearchParams() || after ? is our the query parameters</Link></li>
+            <li><Link to="/details?name=aman&age=24">"/user" ---------------------------------------------useLocation() || /details with Query Parameters</Link></li>
+
+            {/* useLocation() + useNavigate() */}
+            <li><Link to="/DataPassingFrom">Data Passing</Link></li>
           </ul>
         </nav>
 
@@ -61,6 +67,10 @@ function App() {
           {/* Dynamic Route: User Profile */}
           <Route path="/user/:id" element={<User />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/details" element={<Details />} />
+
+          <Route path="/DataPassingFrom" element={<DataPassingFrom />} />
+          <Route path="/DataPassingTo" element={<DataPassingTo />} />
 
 
           {/* Dashboard with Nested Routes */}

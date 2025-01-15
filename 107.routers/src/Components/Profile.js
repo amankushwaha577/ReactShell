@@ -12,7 +12,7 @@ const Profile = () => {
       <h1>Path: "/profile"</h1>
       <h1>URL: http://localhost:3000/profile?name=aman&age=24</h1>
       <hr />
-      <h1>{"const { \"name\", \"age\" } = useSearchParams()"}</h1>
+      <h1>{"const { name, age } = useSearchParams()"}</h1>
       <h2>Name: {name}</h2>
       <h2>Age: {age}</h2>
     </>
