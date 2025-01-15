@@ -69,8 +69,9 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/details" element={<Details />} />
 
-          <Route path="/DataPassingFrom" element={<DataPassingFrom />} />
-          <Route path="/DataPassingTo" element={<DataPassingTo />} />
+          <Route path="/DataPassingFrom" element={<DataPassingFrom />} />{/*---state---------> */}
+                                                                         {/*                  | */}
+          <Route path="/DataPassingTo" element={<DataPassingTo />} />    {/*<----------------- */}
 
 
           {/* Dashboard with Nested Routes */}
