@@ -55,7 +55,7 @@ function App() {
             <li><Link to="/details?name=aman&age=24">"/user" ---------------------------------------------useLocation() || /details with Query Parameters</Link></li>
 
             {/* useLocation() + useNavigate() */}
-            <li><Link to="/DataPassingFrom">Data Passing</Link></li>
+            <li><Link to="/DataPassingFrom">send data from useNavigate() {"-------->"} To useLocation()</Link></li>
           </ul>
         </nav>
 
@@ -70,7 +70,7 @@ function App() {
           <Route path="/details" element={<Details />} />
 
           <Route path="/DataPassingFrom" element={<DataPassingFrom />} />{/*---state---------> */}
-                                                                         {/*                  | */}
+          {/*                                                                                | */}
           <Route path="/DataPassingTo" element={<DataPassingTo />} />    {/*<----------------- */}
 
 
