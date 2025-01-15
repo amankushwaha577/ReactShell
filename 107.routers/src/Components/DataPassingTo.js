@@ -13,3 +13,8 @@ const DataPassingTo = () => {
 };
 
 export default DataPassingTo;
+
+
+// ✅ Best Practices:
+// 1. Avoid directly mutating location.state.
+// 2. Use conditional rendering to avoid errors when state is missing.
