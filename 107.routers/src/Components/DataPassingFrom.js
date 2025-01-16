@@ -9,7 +9,9 @@ const DataPassingFrom = () => {
         });
     };
 
-    return <button onClick={sendData}>Go to Profile</button>;
+    return <>
+    <h3>{"navigate('/DataPassingTo', {  state: { from: 'Aman', message:' Hello from Aman!' } });"}</h3>
+    <button onClick={sendData}>Go to Profile</button></>;
 };
 
 export default DataPassingFrom;
