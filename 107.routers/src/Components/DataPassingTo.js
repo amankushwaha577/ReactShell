@@ -44,7 +44,11 @@ c). Fallback (|| {}): If no state is passed, it defaults to an empty object {} t
     const { from, message } = location.state || {};
 
 
-
+✅ Summary:
+1. navigate() → Navigates programmatically and passes data using state.
+2. useLocation() → Extracts data from the route state.
+3. Safe Handling: The fallback (|| {}) prevents errors if no state is passed.
+4. Data Privacy: The state data does not appear in the URL.
 
 
 // ✅ Best Practices:
