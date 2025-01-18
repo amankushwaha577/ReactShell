@@ -18,3 +18,20 @@ export default function Bubbling() {
     );
   }
   
+
+/*
+event.stopPropagation() is a method in JavaScript that stops the propagation of an event in the DOM.
+
+How It Works:
+------------
+In an event-driven system like React or regular JavaScript, events can bubble up or capture down the DOM tree. When an event is triggered on an element, it can affect both the element that triggered it (the target) and other elements in the hierarchy (parents and ancestors).
+
+a. Bubbling: An event triggered on an element can "bubble" up to its ancestors, causing event listeners on those ancestors to be triggered as well.
+b. Capturing: An event can also be captured before it reaches the target element by its ancestors.
+
+
+event.stopPropagation():
+----------------------
+When you call event.stopPropagation() on an event, it prevents the event from bubbling up or capturing down the DOM. 
+This means that the event will not trigger any other listeners on ancestor elements.
+*/
