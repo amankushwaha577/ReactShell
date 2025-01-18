@@ -42,3 +42,13 @@ function Child({ sendMessageToParent }) {
 }
 
 export default ChildToParent;
+
+
+
+/*
+ child-to-parent communication using a callback function:
+ ---------------------------------------------------------
+ 
+1. Parent passes a function as a prop to the child.
+2. Child invokes the function and sends data back to the parent
+*/
