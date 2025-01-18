@@ -10,17 +10,23 @@ const store = configureStore({
 
 export default store;
 
+/*
+configureStore : A helper function from "Redux Toolkit" that simplifies the process of creating a store. 
 
-// configureStore: A helper function from "Redux Toolkit" that simplifies the process of creating a store. 
+Creates the Store:
+--------------------------
+1. configureStore takes an object. This object contains reducer key.
+2. This reducer object contains all reducers.
+3. "award: awardReducer" -> means the award slice of the state is managed by awardReducer.
 
-// Creates the Store:
-// --------------------------
-// 1. configureStore takes an object. This object contains reducer key.
-// 2. This reducer object contains all reducers.
-// 3. "award: awardReducer" -> means the award slice of the state is managed by awardReducer.
+*/
 
 
 /*
+Simple Process To Setup Redux  :
+---------------------------------
+---------------------------------
+
 1. Install Dependencies: npm install @reduxjs/toolkit react-redux
     @reduxjs/toolkit: Simplifies Redux setup and usage.
     react-redux: Provides bindings for integrating Redux with React.
