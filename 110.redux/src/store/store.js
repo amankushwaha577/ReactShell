@@ -1,14 +1,24 @@
 // src/store/index.js
 import { configureStore } from '@reduxjs/toolkit';
 import awardReducer from './awards/awardReducer';
-
-const store = configureStore({
+ 
+const store = configureStore({ 
   reducer: {
     award: awardReducer,
   },
 });
 
 export default store;
+
+
+// configureStore: A helper function from "Redux Toolkit" that simplifies the process of creating a store. 
+
+// Creates the Store:
+// --------------------------
+// 1. configureStore takes an object. This object contains reducer key.
+// 2. This reducer object contains all reducers.
+// 3. "award: awardReducer" -> means the award slice of the state is managed by awardReducer.
+
 
 /*
 1. Install Dependencies: npm install @reduxjs/toolkit react-redux
