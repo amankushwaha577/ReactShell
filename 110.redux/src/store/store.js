@@ -32,7 +32,7 @@ export default store;
 ----------------------------
     Reducers define how the state changes in response to actions.
     Create a folder reducers inside redux.
-    Create individual reducers, e.g., counterReducer.js:
+    Create individual reducers, e.g., awardReducer.js:
 
 4. Add Reducers to the Store:
 ------------------------------
@@ -46,6 +46,25 @@ export default store;
 
     export default store;
 
+5. Define Actions:
+--------------------------------
+Actions are plain objects that describe what happened.
 
+Create an actions folder in redux. Add a file, e.g., awardAction.js
+export const increment = () => ({ type: 'INCREMENT' });
+export const decrement = () => ({ type: 'DECREMENT' });
+export const reset = () => ({ type: 'RESET' });
+
+
+In our project :
+ dispatch({  type: ACTION1,  payload: updatedValue  });
+           |                                        |
+           <---------------------------------------->
+                    This is Action object
+
+Not this : export const ACTION3 = "ACTION3";
+Its just a simplicity,
+whenever i need to disptach anywhere in project, may be i require payload dynamically so better to have separate type string.
+than there will be easy to have type payload separate :{ type: ACTION1,  payload: updatedValue  }
 
 */

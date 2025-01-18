@@ -23,3 +23,13 @@ export const function1 = (data) => {
         });
     };
 };
+
+
+/*
+What getState Does:
+---------------------
+
+1. getState provides access to the current state of the entire Redux store.
+2. It allows you to retrieve and read the current state.
+
+*/
