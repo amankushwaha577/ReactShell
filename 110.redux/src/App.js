@@ -67,3 +67,36 @@ console.log(currentValue1);
 
 
 */
+
+
+
+/*
+useSelector:
+--------------
+1. Purpose: Access the Redux store's state.
+2. Usage: It allows components to read data from the Redux store.
+
+const value = useSelector((state) => state.someSlice.someValue);
+
+Explanation:
+------------
+1. useSelector takes a function as argument. This function gets the entire Redux state as its argument, 
+   and selects a part of the state from the store.  and you return the slice you need.
+2. It subscribes the component to the Redux store, so the component will re-render whenever the selected state changes.
+
+
+
+
+useDispatch:
+----------------
+1. Purpose: Dispatch actions to update the Redux store.
+2. Usage: It is used to send actions to the Redux store.
+
+const dispatch = useDispatch();
+dispatch(someAction());
+
+Explanation:
+--------------
+1. useDispatch returns the dispatch function from the Redux store.
+2. You can then call dispatch() to send an action (either a plain object or a thunk) that will update the Redux state.
+*/
