@@ -86,7 +86,6 @@ Explanation:
 
 
 
-
 useDispatch:
 ----------------
 1. Purpose: Dispatch actions to update the Redux store.
