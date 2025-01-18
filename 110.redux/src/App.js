@@ -99,3 +99,31 @@ Explanation:
 1. useDispatch returns the dispatch function from the Redux store.
 2. You can then call dispatch() to send an action (either a plain object or a thunk) that will update the Redux state.
 */
+
+
+
+/*
+dispatch(function1(data))}  vs dispatch({type: ACTION1, payload: "aman"})}> 
+how it function can  be dispatch but you said we dispatch action object ? 
+---------------------------------------------------------------------------------
+
+1. Dispatching an Action Object :
+  a. In Redux, typically, we dispatch action objects like this:
+        dispatch({ type: ACTION1, payload: "aman" });
+  b. Action Object: It's a plain JavaScript object with at least a type property, and optionally other properties like payload.
+  c. Direct Dispatch: This action will be sent to the reducer, where it can update the state based on the type.
+
+2. Dispatching a Thunk (Async Function) :
+  a. Im dispatching a function (function1), which is an async thunk. Here's the breakdown:
+     Thunk: thunk is a function  that returns a function + returning function takes dispatch and getState as arguments. 
+     ------ This allows you to perform asynchronous logic or access the current state before dispatching an action.
+            export const function1 = (data) => {
+                          return async (dispatch, getState) => { 
+                                                                .... 
+                                                                }
+                                               }
+  b. Dispatching in the Thunk: After the async operation completes, 
+     the function dispatches a normal action object (like { type: ACTION1, payload: updatedValue }).
+
+
+*/
