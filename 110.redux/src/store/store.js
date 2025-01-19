@@ -11,27 +11,30 @@ const store = configureStore({
 export default store;
 
 /*
-configureStore : A helper function from "Redux Toolkit" that simplifies the process of creating a store. 
+1. configureStore of Redux 🏢
+-----------------------------
+A helper function from "Redux Toolkit" that simplifies the process of creating a store. 
 
-Creates the Store:
---------------------------
-1. configureStore takes an object. This object contains reducer key.
-2. This reducer object contains all reducers.
-3. "award: awardReducer" -> means the award slice of the state is managed by awardReducer.
-
+  Creates the Store:
+  ------------------
+  1. configureStore takes an object. This object contains reducer key.
+  2. This reducer object contains all reducers.
+  3. "award: awardReducer" -> means the award slice of the state is managed by awardReducer.
 */
 
 /*
-Principles of Redux 📜
+2. Principles of Redux 📜
 ----------------------
 
 | **Principle**                      | **Explanation**                                                                                   |
 |------------------------------------|---------------------------------------------------------------------------------------------------|
 | **Single Source of Truth**         | 📦 All application state is stored in a single object called the **store**.                      |
 |                                    | 🔍 This ensures centralized state management, making debugging and tracking easier.              |
+|                                    |                                                                                                  |
 | **State is Read-Only**             | 🛡️ State can only be changed by **dispatching actions**.                                         |
 |                                    | 📝 Actions are plain JavaScript objects describing "what happened" (e.g., `{ type: "ACTION" }`). |
 |                                    | 🔄 This ensures predictability in the app's data flow and prevents accidental state mutations.   |
+|                                    |                                                                                                  |
 |Changes are Made with Pure Functions| ⚙️ State updates are handled by **reducers**, which are **pure functions**.                      |
 |                                    | ✅ Reducers take the current state and an action as inputs, returning a new state.               |
 |                                    | ❌ Reducers must not mutate the existing state or perform side effects like API calls.           |
