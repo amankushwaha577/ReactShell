@@ -38,7 +38,7 @@ Inside Thunk Actions: getState is injected by the Redux Thunk middleware into ac
 Thunk -
 export const someAsyncAction = () => {
     return (dispatch, getState) => {
-        const currentValue1 = getState().award.data1;
+        const currentValue1 = getState().award.data1;     || award is slice we define in configStore()
         console.log(currentValue1);
     };
 };
@@ -104,7 +104,7 @@ Explanation:
 
 /*
 dispatch(function1(data))}  vs dispatch({type: ACTION1, payload: "aman"})}> 
-how it function can  be dispatch but you said we dispatch action object ? 
+how function can  be dispatch but you said we dispatch action object ? 
 ---------------------------------------------------------------------------------
 
 1. Dispatching an Action Object :
