@@ -65,7 +65,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           
           {/* Dynamic Route: User Profile */}
-          <Route path="/user/:id?/" element={<User />} />
+          <Route path="/user/:id" element={<User />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/details" element={<Details />} />
 
