@@ -27,6 +27,18 @@ const Settings = () => {
   );
 };
 
+/*
+| **Aspect**            | **Relative Path** 🧭                               | **Absolute Path** 🌍                                  |
+|-----------------------|--------------------------------------------------|-----------------------------------------------------|
+| **Definition**        | Starts from the current file's location.          | Specifies the full path from the root or domain.    |
+| **Starts With**       | `../`, `./`, or nothing (e.g., `images/pic.jpg`). | `/` or `http://`/`https://`.                        |
+| **Example**           | `../folder/file.txt`.                             | `/folder/file.txt` or `https://example.com/file`.   |
+| **Changes with Folder**| Yes, if the file is moved to a different folder.  | No, always points to the same location.             |
+| **Use Case**          | Navigating within project files.                  | Fixed links or external resources.                 |
+| **Best For**          | Local files like images, stylesheets, etc.        | External links, APIs, or fixed file locations.      |
+*/
+
+
 // Setting1 Page (nested route under Setting)
 const Setting1 = () => {
   return <h3>Settings Page 1</h3>;
