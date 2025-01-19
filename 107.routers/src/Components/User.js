@@ -8,7 +8,7 @@ const User = () => {
     <h1>http://localhost:3000/user/123</h1>
     <hr/>
     <h1>{"const { id } = useParams()"}</h1>
-    <h2>id - {id}</h2></>;
+    <h2>id - {id.toString()}</h2></>;
   };
 
   export default User
