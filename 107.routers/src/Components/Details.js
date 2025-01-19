@@ -17,6 +17,7 @@ const Details = () => {
       <h1>Path: "/profile"</h1>
       <h1>{"URL: {window.location.href} -> "} {window.location.href}</h1>
       <h1>{"Pathname: {location.pathname} -> "} {location.pathname}</h1>
+      <h1>{"Hash: {location.hash} -> "} {location.hash}</h1>
       <h1>{"Query: {location.search} -> "} {location.search}</h1>
       <hr />
       <h1>{"const queryParams = new URLSearchParams(location.search)"}</h1>
