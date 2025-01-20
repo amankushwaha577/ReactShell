@@ -1,44 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import { Modal, Button } from 'antd';
-import './App.css';
-import back from './Assets/Background.jpg';
+// RichTextEditor.jsx
+import React, { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css"; // Import Quill's default styles
+import { FaBold, FaItalic, FaUnderline, FaListOl, FaListUl, FaAlignLeft, FaAlignCenter, FaAlignRight, FaLink, FaImage } from "react-icons/fa"; // Use professional icons
+import "./App.css"; // Custom styles for a beautiful UI
 
-const WelcomePopup = () => {
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const hasSeenPopup = localStorage.getItem('hasSeenHomePopup');
-        if (!hasSeenPopup) {
-            setIsVisible(true);
-        }
-    }, []);
-
-    const handleClose = () => {
-        setIsVisible(false);
-        localStorage.setItem('hasSeenHomePopup', 'true');
-    };
-
-    return (
-        <Modal
-            title={<span className="popup-title">🎉 Welcome to Your Project!</span>}
-            open={isVisible}
-            onCancel={handleClose}
-            width={900} 
-            footer={[
-                <Button key="ok" type="primary" onClick={handleClose} className="custom-button">
-                    Got It!
-                </Button>
-            ]}
-            className="custom-popup"
-        >
-            <div className="popup-image-container">
-                <img src={back} alt="Welcome Banner" />
-            </div>
-            <p className="popup-message">
-                Welcome to your homepage! 🚀  Enjoy exploring the app!
-            </p>
-        </Modal>
-    );
+const RichTextEditor = ({ value, onChange, placeholder = "Start typing here...", onExport }) => {
+  return (
+    <div className="editor-container">
+      <h2 className="editor-title">Creative Text Editor</h2>
+      <ReactQuill
+        theme="snow"
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        modules={{
+          toolbar: [
+            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            [{ 'align': [] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            ['link', 'image'],
+            ['blockquote', 'code-block'],
+            ['undo', 'redo'],
+            ['clean'] // For clearing formatting
+          ]
+        }}
+        formats={[
+          'header', 'font', 'list', 'align', 'bold', 'italic', 'underline', 'strike', 'link', 'image', 'blockquote', 'code-block'
+        ]}
+        className="custom-editor"
+      />
+      {onExport && (
+        <button className="export-button" onClick={onExport}>
+          Export to HTML
+        </button>
+      )}
+    </div>
+  );
 };
 
-export default WelcomePopup;
+
+
+
+const PostEditor = () => {
+    const [content, setContent] = useState("");
+  
+    const handleContentChange = (value) => {
+      setContent(value);
+    };
+  
+    const handleExportHTML = () => {
+      alert("Exported HTML: " + content);
+    };
+  
+    return (
+      <div>
+        <h1>Create a Post : {content}</h1>
+        <RichTextEditor
+          value={content}
+          onChange={handleContentChange}
+          placeholder="Write your post here..."
+          onExport={handleExportHTML}
+        />
+      </div>
+    );
+  };
+  
+  export default PostEditor;
+

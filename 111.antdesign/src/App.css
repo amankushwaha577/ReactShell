@@ -1,94 +1,161 @@
-/* Modal Content */
-.custom-popup .ant-modal-content {
-  border-radius: 20px;
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  text-align: center;
+/* Editor Main Container */
+.editor-container {
+  max-width: 900px;
+  margin: 5rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #6e7dff, #00d4c1);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
-/* Header Styling */
-.custom-popup .ant-modal-header {
-  background: linear-gradient(135deg, #4caf50, #66bb6a);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  color: white;
+/* Title */
+.editor-title {
+  font-family: 'Segoe UI', sans-serif;
   text-align: center;
-  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Image Section */
-.popup-image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  max-height: 400px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  /* margin-bottom: px; */
-  animation: fadeIn 1.2s ease-in-out;
+/* Quill Editor */
+.custom-editor {
+  background: linear-gradient(135deg, #ffffff, #f0f4ff); /* Subtle Gradient Background */
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: 'Helvetica', sans-serif;
+  transition: border 0.3s ease;
 }
 
-/* Popup Message Styling */
-.popup-message {
-  font-size: 1.3rem;
-  line-height: 1.4;
-  color: #e0e0e0;
-  padding: 0 10px;
-  animation: slideUp 1s ease;
+/* Text Body Styling */
+.custom-editor .ql-container .ql-editor {
+  background: #ffffff;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 200px;
+  line-height: 1.8;
+  font-size: 16px;
+  font-family: 'Georgia', serif; /* Elegant Serif Font */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* Footer Button */
-.custom-popup .ant-modal-footer {
-  border-top: none;
-  text-align: center;
+/* When Editor is Focused */
+.custom-editor .ql-container .ql-editor:focus {
+  background: linear-gradient(to bottom, #ffffff, #f8fbff); /* Light gradient focus */
+  outline: none;
+  border: 2px solid #00d4c1;
+  box-shadow: 0 0 10px rgba(0, 212, 193, 0.5); /* Cool glowing effect */
 }
 
-.custom-popup .custom-button {
-  background: linear-gradient(135deg, #4caf50, #45a049);
+/* Placeholder Text */
+.custom-editor .ql-editor .ql-placeholder {
+  color: #bbb;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Selection Highlight */
+.custom-editor .ql-container .ql-editor ::selection {
+  background: #ffe6b3; /* Warm yellow highlight */
+  color: #000;
+}
+
+/* Link Styling */
+.custom-editor .ql-editor a {
+  color: #6e7dff;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px dashed #6e7dff;
+}
+
+.custom-editor .ql-editor a:hover {
+  color: #e52e71;
+  border-bottom: 1px solid #e52e71;
+}
+
+/* Toolbar */
+.custom-editor .ql-toolbar {
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #9b51e0);
   border: none;
-  border-radius: 30px;
-  padding: 12px 30px;
+  border-radius: 12px 12px 0 0;
+  padding: 8px 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Quill Toolbar Icons */
+.custom-editor .ql-toolbar .ql-formats button {
+  color: white !important;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.custom-editor .ql-toolbar .ql-formats button:hover {
+  color: #ffeb3b !important;
+  transform: scale(1.2);
+}
+
+.custom-editor .ql-toolbar button:focus {
+  outline: none;
+}
+
+.custom-editor .ql-toolbar .ql-formats button svg {
+  width: 20px;
+  height: 20px;
+  fill: white !important;
+}
+
+.custom-editor .ql-toolbar .ql-formats button:hover svg {
+  fill: #ffeb3b;
+}
+
+/* Export Button */
+.export-button {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.8rem;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #fff;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.custom-popup .custom-button:hover {
-  background: linear-gradient(135deg, #45a049, #3d8c43);
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.8);
+.export-button:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  transform: translateY(-2px);
 }
 
-.custom-popup .custom-button:active {
-  transform: translateY(3px);
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.5);
+.export-button:active {
+  transform: translateY(0);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+/* Cool Scrollbar Styles */
+.custom-editor .ql-container .ql-editor::-webkit-scrollbar {
+  width: 10px;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.custom-editor .ql-container .ql-editor::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #e52e71, #ff8a00);
+  border-radius: 10px;
 }
 
-/* Title Styling */
-.popup-title {
-  color: white;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.4);
-  animation: glowPulse 1.5s infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% { text-shadow: 0 2px 10px rgba(255, 255, 255, 0.4); }
-  50% { text-shadow: 0 4px 20px rgba(255, 255, 255, 0.8); }
+.custom-editor .ql-container .ql-editor::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
 }
