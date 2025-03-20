@@ -22,11 +22,13 @@ const UseState = () => {
 
 export default UseState;
 
-// Definition : Hooks are functions that allows us to work with state and lifecycle methods.
-// ----------------------------------------------------------------------------------------
+/*
+Definition : Hooks are functions that allows us to work with state and lifecycle methods.
+----------------------------------------------------------------------------------------
 
-// UseState() : This Hook allows us to manage and Hold state.
-// A. Takes an initial value as an argument and Returns array containing 2 values : state & function to change state.
-// B. State Setter Function is Used to update state.
-//    state can't be update directly. If we do x ="Aman Kushwaha"  state will change but it will not trigger re-render. So UI will not update.
+UseState() : This Hook allows us to manage and Hold state.
+A. Takes an initial value as an argument and Returns array containing 2 values : state & function to change state.
+B. State Setter Function is Used to update state.
+   state can't be update directly. If we do x ="Aman Kushwaha"  state will change but it will not trigger re-render. So UI will not update.
 
+*/
