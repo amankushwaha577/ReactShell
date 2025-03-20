@@ -1,11 +1,9 @@
-import { useState } from "react";
-
 function Counter() {
   const [count, setCount] = useState(0);
 
   function incrementMultipleTimes() {
     for (let i = 0; i < 5; i++) {
-      setCount(count + 1); // ❌ Uses stale state value
+      setCount(prevCount => prevCount + 1); // ✅ Uses latest state
     }
   }
 
@@ -16,27 +14,24 @@ function Counter() {
     </div>
   );
 }
+
+//  Solutions :
+//  ----------
+//  Always use the functional form of setState (prevState => newState) when updating state multiple times in a loop.
+
 /*
-Que. Why does updating state inside a loop not work as expected?
-Ans. When you update state inside a loop, each iteration uses the stale (old) state value instead of the latest updated state.
+✅ Why Does This Work?
+    for (let i = 0; i < 5; i++) {
+       setCount(prevCount => prevCount + 1); // ✅ Uses latest state
+    }
 
-     for (let i = 0; i < 5; i++) {
-         setCount(count + 1); // ❌ Uses stale state value
-     }
+    a. setCount(prevCount => prevCount + 1) ensures each update gets the latest state.
+       setCount(0 => 0 + 1)
+       setCount(1 => 1 + 1)
+       setCount(2 => 2 + 1)
+       setCount(3 => 3 + 1)
+       setCount(4 => 4 + 1)  => 5
 
-    ❌ What's Wrong? :
-    a. The loop runs five times, but each iteration still references the old count.
-       setCount(0 + 1);
-       setCount(0 + 1);
-       setCount(0 + 1);
-       setCount(0 + 1);
-       setCount(0 + 1);
+    b. React processes updates in sequence, correctly incrementing count by 5.
+*/
 
-    b. Instead of increasing count by 5, it increases by 1 (because count remains the same in all iterations).
- */   
-
-
-//  Outcomes Points :
-//  -----------------
-//  1. React updates state asynchronously and does not update the state immediately.
-//  2. React batches state updates, causes unexpected behavior.
