@@ -35,13 +35,7 @@ B. State Setter Function is Used to update state.
 
    b). Re-renders: Every state change triggers a re-render of the component.
 
-*/
+   c). Updating state with the same value doesn’t trigger a re-render.
 
-/*
-🔥 Bonus: Scenario-Based Questions
-1. Why does updating state inside a loop not work as expected?
-2. What is the difference between using useState in local storage vs. normal state?
-3. Can we pass an asynchronous function to setState? Why or why not?
-4. How do you reset state when a component unmounts?
-5. How do you debug useState issues effectively?
+   d). React batches updates inside event handlers.
 */
