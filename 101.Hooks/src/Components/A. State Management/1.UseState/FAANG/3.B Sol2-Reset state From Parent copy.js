@@ -1,32 +1,20 @@
-import { useState } from "react";
-import MyComponent from "./MyComponent";
-
 function Parent() {
-  const [show, setShow] = useState(true);
+  const [resetKey, setResetKey] = useState(0);
 
   return (
     <div>
-      {show && <MyComponent />}
-      <button onClick={() => setShow(false)}>Unmount</button>
-    </div>
-  );
-}
-
-function MyComponent() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <MyComponent key={resetKey} />
+      <button onClick={() => setResetKey(prevKey => prevKey + 1)}>Reset</button>
     </div>
   );
 }
 
 /*
-Solution 1 - Reset State Using Parent Component :
--------------------------------------------------
-Instead of trying to reset the state on unmount, you can control the state from the parent component.
+Solution 2 : Reset State When Key Changes :
+------------------------------------------
+Instead of unmounting the component, 
+a. Just pass a key name prop in Child Component.
+b. Change it through button in Parent.
+c. 👉 Changing the key forces React to re-create the component, resetting its state.
 
-👉 When show is set to false, the component unmounts, removing its state automatically.
 */
