@@ -69,3 +69,4 @@ Ans. 🚫 No, it must be at the top level of the component.
 Q10. Can we pass an asynchronous function to setState?
 Ans. 🚫 No, setState does not accept async functions.
 */
+
