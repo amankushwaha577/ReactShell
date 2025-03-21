@@ -7,8 +7,10 @@ function WrongAsyncSetState() {
 
     setData(async () => {
       // ❌ Incorrect: Passing an async function to setState() Function.
+
       const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
-      return response.json();
+      const result = await response.json();
+      return result;
     });
 
   };
@@ -17,6 +19,7 @@ function WrongAsyncSetState() {
     <div>
       <button onClick={fetchData}>Fetch Data</button>
       <p>Data: {JSON.stringify(data)}</p>
+      <p>Data: {JSON.stringify(data).type}</p>
 
       {/* Output:
             1. Initially:
@@ -42,7 +45,37 @@ Ans.  No ❌, we cannot pass an asynchronous function to setState.
 
             setData(async () => {
                 const response = await fetch("https://api.example.com/data");
-                return response.json(); // ❌ This returns a Promise, not a value
+                const result = await response.json();
+                return result; // ❌ This returns a Promise, not a value
             });
+
+*/
+
+/*
+Que. This returns a Promise, not a value is it correct ?
+          setData(async () => {
+              const response = await fetch("https://api.example.com/data");
+              const result = await response.json();
+              return result; // ❌ This returns a Promise, not a value
+          });
+Ans. YEs,
+    ⚠️ What's Wrong?
+    a. setData expects a value or a function that synchronously returns a value.
+    b. Instead, you're passing an async function, which always returns a Promise, not the actual value.
+
+    🔹 Breaking It Down :
+    a. Here, result is the actual fetched data (e.g., a JSON object).
+    b. Since the function is async, it does not return result directly but wraps it in a Promise.
+    c. So, setData stores a Promise, not the actual data.
+       OP : {}
+
+
+    ✅ Correct Way :
+    const fetchData = async () => {
+            const response = await fetch("https://api.example.com/data");
+            const result = await response.json();
+            setData(result); // ✅ Correct: Now data is an actual value
+     };
+
 
 */
