@@ -4,10 +4,10 @@ const UseState = () => {
   const [x, setX] = useState("Aman");
 
   console.log(x); 
-  // 1. state initialization in React with useState() is synchronous.
   // Immediate OP: ['Aman', ƒ]
+  // a. state initialization in React with useState() is synchronous. You can get immediate output after initilization.
 
-  // 2. but state updates are asynchronous. it does't reflects immediately.
+  // b. But state updates are asynchronous. it does't reflects immediately.
   //    It can only be catch by sideeffect hook useEffect() / useLayoutEffect().
 
   return (
