@@ -51,6 +51,7 @@ Ans. ✅ Correct way:
 /*
 Q8. Why is useState asynchronous?
 An. React batches updates to improve performance, so state updates do not happen immediately.
+    If we loop state Update 100 time than 100 re-render is estimated but this is resolved through batching.
 
 Q9. Can we use useState inside loops, conditions, or functions?
 Ans. 🚫 No, it must be at the top level of the component.

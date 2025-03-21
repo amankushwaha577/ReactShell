@@ -17,4 +17,9 @@ a. Just pass a key name prop in Child Component.
 b. Change it through button in Parent.
 c. 👉 Changing the key forces React to re-create the component, resetting its state.
 
+Very Important Note :
+--------------------
+Q🔹  What Happens When the key Prop Changes in a React Component?
+Ans. If the key prop of a component changes, React completely destroys (unmounts) the old component
+     and creates (mounts) a new one instead of just re-rendering it.
 */
