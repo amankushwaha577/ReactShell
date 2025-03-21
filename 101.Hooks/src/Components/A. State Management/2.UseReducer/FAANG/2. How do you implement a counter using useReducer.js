@@ -18,6 +18,10 @@ function reducer(state, action) {
 function Counter() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  ///// --
+  console.log("Render:", state.count);
+  ///// --
+
   return (
     <div>
       <p>Count: {state.count}</p>
@@ -27,3 +31,16 @@ function Counter() {
     </div>
   );
 }
+
+/*
+Que. 👉 What happens if you click reset after multiple increments?
+Ans. ✅ Output:
+
+        a. Click + three times
+           op : "Render: 3"
+
+        b. Click Reset 
+           Op : "Render: 0" 
+        
+        📌 Each dispatch causes a re-render!
+*/
