@@ -14,7 +14,7 @@ const UseState = () => {
     <>
       <div>{x}</div>
       <button onClick={() => setX((prev) => prev + " Kushwaha")}>Button</button>
-      {/* f). Always use the functional form of setState (prevState => newState) if you want changes based on previous state.*/}
+      {/* c). Always use the functional form of setState (prevState => newState) if you want changes based on previous state.*/}
     </>
   );
 };
