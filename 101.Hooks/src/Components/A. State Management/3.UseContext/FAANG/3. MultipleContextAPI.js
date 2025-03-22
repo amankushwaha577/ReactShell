@@ -5,12 +5,12 @@ const ThemeContext = createContext();
 
 function MultipleContextAPI() {
   const [theme, setTheme] = useState('light');
-  const user = { name: 'Alice' };
+  const user = { name: 'Aman' };
 
   return (
     <UserContext.Provider value={user}>
       <ThemeContext.Provider value={theme}>
-        <Content />
+        <Child />
       </ThemeContext.Provider>
     </UserContext.Provider>
   );
@@ -18,14 +18,14 @@ function MultipleContextAPI() {
 
 export default MultipleContextAPI;
 
-function Content() {
-  const theme = useContext(ThemeContext);
-  const user = useContext(UserContext);
+function Child() {
+  const theme = useContext(ThemeContext); // here theme = "light"
+  const user = useContext(UserContext);   // here Alice = { name : "Aman"}
 
   return (
     <div>
-      <p>User: {user.name}</p>
-      <p>Theme: {theme}</p>
+      <p>User: {user.name}</p> {/* User:  Aman */}
+      <p>Theme: {theme}</p>    {/* Theme: light */}
     </div>
   );
 }
