@@ -2,7 +2,6 @@
 
 import UseState from './Components/A. State Management/1.UseState/UseState';
 import UseReducer from './Components/A. State Management/2.UseReducer/UseReducer';
-import MultipleContextAPI from './Components/A. State Management/3.UseContext/FAANG/MultipleContextAPI';
 import UseContext from './Components/A. State Management/3.UseContext/UseContext';
 
 function App() {

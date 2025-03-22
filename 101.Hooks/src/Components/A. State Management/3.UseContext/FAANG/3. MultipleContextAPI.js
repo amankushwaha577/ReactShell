@@ -29,3 +29,8 @@ function Child() {
     </div>
   );
 }
+
+/*
+Que. Can you have multiple Context.Providers in the same app?
+Ans. Yes! Using multiple Providers helps isolate state updates, improving performance.
+*/
