@@ -70,3 +70,11 @@ Ans.  React.memo() memoizes a component, meaning it only re-renders if its props
           Op : Parent rerendered
                Child 2 rerendered
 */
+
+/*
+Qu1.  What is React.memo? How does it work?
+Ans.  React.memo is a higher-order component (HOC) that memoizes a entire functional component to prevent unnecessary re-renders.
+      It does a shallow comparison of props.
+      If props don’t change, the component doesn’t re-render.
+
+*/
