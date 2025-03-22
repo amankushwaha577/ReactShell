@@ -1,7 +1,6 @@
 /*
-1️⃣ What happens if a functional component wrapped with React.memo has no props?
-✅ Answer :
-        If a memoized component has no props, it will re-renders everytime when its parent re-renders.
+Quest. What happens if a functional component wrapped with React.memo has no props?
+✅Ans. If a memoized component has no props, it will re-renders everytime when its parent re-renders.
         It makes use of React.memo pointlsee
 */
 const Child = memo(() => {
