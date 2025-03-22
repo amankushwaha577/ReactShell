@@ -47,11 +47,3 @@ const AuthProvider2 = ({ children }) => {
     );
 };
 
-
-/*
-🔥 Summary :
-    a. Always wrap context values (objects/arrays) inside useMemo to prevent unnecessary re-renders.
-    b. Wrap functions inside useCallback to avoid function re-creation.
-
-    This makes your React app faster, more efficient, and scalable! 🚀
-*/
