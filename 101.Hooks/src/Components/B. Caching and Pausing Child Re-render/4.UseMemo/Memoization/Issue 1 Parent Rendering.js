@@ -40,5 +40,8 @@ OP :
       Parent rerendered
       Child 1 rerendered
       Child 2 rerendered
+
+      Issue : Why Children re-render ?? even their props are not changed.
+              
 */
 

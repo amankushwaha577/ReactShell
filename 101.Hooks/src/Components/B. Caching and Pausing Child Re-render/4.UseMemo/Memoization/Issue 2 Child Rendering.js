@@ -44,3 +44,19 @@ const Parent = () => {
       <p>Child 2- {value}</p>
     );
   };
+
+/*
+      a). Click On Parent -> State of Parent changes -> Re-render Parent
+          All Its child will re-render
+          Op : Parent rerendered
+               Child 1 rerendered
+               Child 2 rerendered
+
+      b). Click On child1 -> State of Parent changes -> Re-render Parent
+          All Its child will re-render
+          Op : Parent rerendered
+               Child 1 rerendered
+               Child 2 rerendered
+
+          Issue ? Why Child2 is re-render ?? even its prop is not changed ?
+*/
