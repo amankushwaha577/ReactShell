@@ -14,18 +14,19 @@ function UseLayoutEffect() {
 
   // Op:  Third,  First,  Second
 
-  // Asynchronous: useEffect is asynchronous and runs after render (after the browser has painted and the user has seen the updated UI).
-  // useLayoutEffect is synchronous and runs synchronously after all DOM mutations. 
-  // It fires before the browser has painted, making it suitable for operations that need to be done before the user sees the updated UI.
-
+  /* Render(DOM Mutations)       ->         Browser Painting  -->  Here useEffect works
+                          | Synchronous  |
+                          ----------------
+                      Here useLayoutEffect works   
+                      
+   a. Asynchronous      useEffect : useEffects is asynchronous and runs after render (after the browser has painted and the user has seen the updated UI).
+   b. Synchronous useLayoutEffect : useLayoutEffect is synchronous and runs synchronously after all DOM mutations. 
+                                    But before the browser has painted.
+  */
   return ( 
-    <Fragment> 
-      <div> 
-      </div>
-    </Fragment> 
+   <></>
   ); 
 }; 
-  
 export default UseLayoutEffect;
 
 
