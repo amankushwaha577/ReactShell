@@ -28,3 +28,31 @@ Ans. Mistake 1. : Using useMemo to memoize non-expensive values.
 
      Mistake 2  : Using useMemo([]) but missing dependencies, causing stale data.
 */
+
+
+/*
+Qu1. What is useCallback? How is it different from useMemo?
+Ans. a. useMemo returns a memoized value.
+     b. useCallback returns a memoized function
+
+Qu2. When should you use useCallback?
+Ans. If you're passing a function as a prop to a React.memo child.
+     The React.memo child component may have performance issues due to function re-creation.
+
+Qu3. What is a common mistake when using useCallback?
+Ans. Mistake: Using useCallback([]) without dependencies, leading to stale closures.
+
+     ❌ Wrong Usage (Stale Closure Issue):
+     -------------------------------------
+      const handleClick = useCallback(() => {
+             console.log(count); // Always logs old `count` state
+      }, []);
+
+      Solution :
+      ----------
+      const handleClick = useCallback(() => {
+             console.log(count);
+      }, [count]);
+
+
+*/
