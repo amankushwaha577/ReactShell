@@ -37,7 +37,9 @@ Que. 👉 What happens if you click reset after multiple increments?
 Ans. ✅ Output:
 
         a. Click + three times
-           op : "Render: 3"
+           op : "Render: 0"
+                "Render: 1"
+                "Render: 2"
 
         b. Click Reset 
            Op : "Render: 0" 
