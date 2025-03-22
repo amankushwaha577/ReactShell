@@ -9,9 +9,10 @@ Ans. React.memo (Higher-Order Component)
 
 Qu3. Do all three (React.memo, useCallback, and useMemo) work during the render phase. ?
 Ans. Yes, all three (useMemo, useCallback, and React.memo) work during the render phase.
-      A. useMemo → Prevents value recalculation by memoizing the result of a function based on dependencies.
-      B. useCallback → Prevents function recreation unless dependencies change.
-      C. React.memo → Prevents component re-renders if props haven't changed.
+     🔥 Final Takeaways
+            a. Use React.memo for memoizing components.
+            b. Use useMemo for memoizing values (objects, arrays).
+            c. Use useCallback for memoizing functions.
 
 Qu4. How does React.memo compare props?
 Ans. a. It does a shallow comparison of props.
