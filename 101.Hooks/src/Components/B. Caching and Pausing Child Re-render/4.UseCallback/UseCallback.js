@@ -1,34 +1,92 @@
-import React, { useState, useCallback } from 'react';
+import { memo, useCallback, useState } from "react";
 
-function UseCallback() {
-    const [count, setCount] = useState(0);
+const Parent = () => {
+  const [parent, setParent] = useState(0);
+  const [child1, setChild1] = useState(0);
+  const [child2, setChild2] = useState(0);
 
-    // 1. Memoize the increment function to avoid re-creating it on each render.
-    //    Since the dependency array is empty, the function is created only once (on mount).
-    const increment = useCallback(() => {
-        setCount(prevCount => prevCount + 1); // Using functional updates to avoid stale state issues.
-    }, []); // No dependencies, so the function remains stable across renders.
+  const updateParent = () => {
+    setParent(Math.floor(Math.random() * 100) + 1);
+  };
 
-    return (
-        <div>
-            <h2>UseCallback Example</h2>
-            <p>Count: {count}</p>
-            {/* Passing the memoized function as a prop to prevent unnecessary child re-rendering */}
-            <ChildComponent increment={increment} />
-        </div>
-    );
-}
+  const updateChild1 = useCallback(() => {
+    setChild1(Math.floor(Math.random() * 100) + 1);
+  }, [setChild1 ]);
 
-export default UseCallback;
+  const updateChild2 = useCallback(() => {
+    setChild2(Math.floor(Math.random() * 100) + 1);
+  }, [setChild2 ]);
 
-function ChildComponent({ increment }) {
-    console.log('Child component rendered'); // Helpful for verifying re-render behavior.
-    return (
-        <>
-            <button onClick={increment}>Increment</button>
-        </>
-    );
-}
+  console.log("Parent rerendered");
+
+  return (
+    <>
+      <p>Parent - {parent}</p>
+      <button onClick={updateParent}>Update Parent</button>
+      <Child1 value={child1} updateValue={updateChild1} />
+      <Child2 value={child2} updateValue={updateChild2} />
+    </>
+  );
+};
+export default Parent
+
+const Child1 = memo(({ value, updateValue }) => {
+  console.log("Child 1 rerendered");
+
+  return (
+    <>
+      <p>Child 1- {value}</p>
+      <button onClick={updateValue}>Update Child 1</button>
+    </>
+  );
+});
+
+const Child2 = memo(({ value, updateValue }) => {
+  console.log("Child 2 rerendered");
+
+  return (
+    <>
+      <p>Child 2- {value}</p>
+      <button onClick={updateValue}>Update Child 2</button>
+    </>
+  );
+});
+
+
+/*
+There is a limitation of memo, React.memo only memorize the value not functions / objects.
+
+Ex :
+Now Children have 2 props (One normal value | other is function type)
+
+      <Child1 value={child1} updateValue={updateChild1} />
+      <Child2 value={child2} updateValue={updateChild2} />
+                |                     |
+                |----> Normal Prop    |----> Function type prop
+                
+            (React.memo can deal          (useCallback can deal
+                 with it )                        with it )
+
+      a). Click On Parent -> State of Parent changes -> Re-render Parent
+          See, 
+          Parent re-render so its all function will change its reference.
+          But we used useCallback() for memozation of Functions. so now updateChild1, updateChild2 will not change its reference.
+          
+          So None of the Props (neither value nor function) in child1, child2 changed so both will not re-render.
+
+          Op : Parent rerendered.
+
+      b). Click On child1 -> State of Parent changes -> Re-render Parent
+                          ( Because state is in parent )
+          Parent re-render so its all function will change its reference.
+          But we used useCallback() for memozation of Functions. so now updateChild1, updateChild2 will not change its reference.
+
+          Now, prop of Child1 (state-child) is changed so it will re-render.
+          So None of the Props (neither value nor function) in child2 changed so it will not re-render.
+
+          Op : Parent rerendered
+               Child 1 rerendered
+*/
 
 /*
 Purpose of useCallback:
@@ -64,14 +122,5 @@ Prevention of Child Re-rendering :
 2. **Solution:** `useCallback` **stabilizes** the function reference so the child doesn't re-render unnecessarily.
    useCallback(() => calculateSum(a, b), [a, b]);
    () => calculateSum(a, b) will be chached.
-
-
-✅ **Best Practice (Using React.memo):**
-```jsx
-const ChildComponent = React.memo(({ increment }) => {
-    console.log('Child rendered');
-    return <button onClick={increment}>Increment</button>;
-});
-
 
 */
