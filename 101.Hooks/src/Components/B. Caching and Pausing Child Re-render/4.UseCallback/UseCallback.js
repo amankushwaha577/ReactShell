@@ -99,7 +99,6 @@ const memoizedFunction = useCallback(() => {
 }, [dependency]);
 
 
-
 1. About Function :
 -----------------------
     A. ✅ The function must be **pure** and should avoid side effects.
@@ -112,15 +111,4 @@ const memoizedFunction = useCallback(() => {
     A. No Array: Function recreated on **every render**.
     B. []: Function created **once** on component mount.
     C. [dep]`: Function created once on mount + Function recreated when **dependency changes**.
-
-
-
-Prevention of Child Re-rendering :
------------------------------------
-1. If you pass a function as a prop **without memoization**, the child will re-render 
-   because the function reference changes with every render.
-2. **Solution:** `useCallback` **stabilizes** the function reference so the child doesn't re-render unnecessarily.
-   useCallback(() => calculateSum(a, b), [a, b]);
-   () => calculateSum(a, b) will be chached.
-
 */
